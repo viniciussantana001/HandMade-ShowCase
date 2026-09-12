@@ -21,11 +21,10 @@ Projeto de TCC da **Etec Euro Albino de Souza**, em Mogi Guaçu–SP. Esta é a 
 - **Gerenciar a conta:** perfis para pessoas e empresas, planos, ajuda e recursos de privacidade.
 
 <p align="center">
-  <img src="assets/telas/inicio.png" alt="Aplicativo Flutter: início com categorias e atalhos para vender ou comprar materiais" width="290">
-  <img src="assets/telas/cadastro.png" alt="Aplicativo Flutter: escolha entre pessoa física e empresa, sem dados preenchidos" width="290">
+  <img src="assets/telas/inicio.png" alt="Aplicativo Flutter: início com categorias e atalhos para vender ou comprar materiais" width="330">
 </p>
 
-*Capturas reais do aplicativo em ambiente de testes. Veja os recortes e seus contextos na [galeria](docs/aplicativo.md).*
+*Captura real do aplicativo em ambiente de testes. Veja também cadastro, negociação e planos na [galeria](docs/aplicativo.md).*
 
 ## Resultados que conseguimos verificar
 
