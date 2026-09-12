@@ -1,0 +1,18 @@
+# Public documentation and reviewed visual assets only.
+/*
+!/.gitignore
+!/.gitattributes
+!/README.md
+!/USO.md
+!/docs/
+!/assets/
+/docs/*
+!/docs/*.md
+!/docs/estudos/
+/docs/estudos/*
+!/docs/estudos/*.md
+/assets/*
+!/assets/capa.png
+!/assets/telas/
+/assets/telas/*
+!/assets/telas/*.png
