@@ -1,0 +1,21 @@
+{
+  "environment": "Firebase Emulator Suite / project <projeto-teste>",
+  "endpoint": "http://127.0.0.1:5001/<projeto-teste>/southamerica-east1/stripeWebhook",
+  "secret_material": "fabricated local-only placeholders; no real Stripe credential",
+  "tests": [
+    {
+      "case": "POST without Stripe-Signature",
+      "status": 503,
+      "body": "provider unavailable",
+      "interpretation": "Handler refused before signature verification because the configured API-key placeholder is deliberately not a syntactically valid sk_test_ key."
+    },
+    {
+      "case": "POST with invalid Stripe-Signature",
+      "status": 401,
+      "body": "invalid signature",
+      "interpretation": "The test-only key prefix allowed the handler to reach Stripe constructEvent; the invalid signature was rejected. The missing-signature request returned 503 because the handler checks for a non-empty signature together with test-only key configuration before calling constructEvent."
+    }
+  ],
+  "result": "PASS: unsigned and invalid-signature requests were rejected; no signed event was submitted.",
+  "scope_note": "The Functions-only invocation did not include Firestore Emulator, so this proof establishes rejection status but does not independently inspect persistent emulator state."
+}
