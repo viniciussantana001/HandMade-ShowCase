@@ -1,0 +1,12 @@
+{
+  "environment": "Firebase Emulator Suite, projeto demo substituído por <projeto-teste>; serviços locais em loopback",
+  "command": "firebase emulators:exec --project <projeto-teste> --only auth,functions,firestore,storage,pubsub --non-interactive -- node scripts/ci/run_emulator_tests.mjs integration",
+  "result": "18 suites passed; 43 tests passed; 0 failed, 0 skipped; exit code 0",
+  "report_sha256": "9b1329939abaa5d3a20d86ebba4b9c407a55fbd2b815661675b4500813e5f40e",
+  "raw_log_included_in_publication": false,
+  "limitations": [
+    "First invocation had a function build/startup race and failed; after confirming functions/lib/index.js existed, rerun loaded all definitions and all integration tests passed.",
+    "Emulator host runtime was Node 24 while functions declare Node 22; this environment mismatch is recorded.",
+    "Cloud Secret Manager metadata lookup warnings and missing optional Algolia secret did not prevent these tests from passing."
+  ]
+}
