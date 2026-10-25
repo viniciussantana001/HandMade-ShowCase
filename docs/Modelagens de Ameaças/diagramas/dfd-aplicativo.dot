@@ -1,0 +1,39 @@
+digraph app_dfd {
+  graph [rankdir=LR, bgcolor=white, pad=0.35, nodesep=0.55, ranksep=0.8, fontname=Arial, fontsize=20, label=<DFD | Aplicativo final - development>, labelloc=t];
+  node [shape=box, style=rounded, fontname=Arial, fontsize=11, color=slategray, fillcolor=white, margin=0.16];
+  edge [fontname=Arial, fontsize=9, color=slategray, arrowsize=0.75];
+  actor [shape=oval, label=<Pessoa usuaria<BR/>comprador / vendedor>, fillcolor=honeydew];
+  subgraph cluster_device {
+    label=<TB1 | dispositivo nao confiavel>; color=darkorange; style=dashed; penwidth=2;
+    mobile [label=<Aplicativo Flutter<BR/>interface e estado cliente>, fillcolor=moccasin];
+    appcheck [label=<Firebase App Check<BR/>attestation / token>];
+  }
+  subgraph cluster_firebase {
+    label=<TB2 | servicos Firebase>; color=steelblue; style=dashed; penwidth=2;
+    auth [label=<Firebase Authentication<BR/>UID e claims>, fillcolor=lightblue];
+    rules [label=<Regras Firestore / Storage<BR/>identidade + propriedade + campos>, fillcolor=lightblue];
+    firestore [shape=cylinder, label=<Cloud Firestore<BR/>perfis, anuncios, conversas, pedidos>, fillcolor=lightblue];
+    storage [shape=cylinder, label=<Cloud Storage<BR/>imagens e objetos>, fillcolor=lightblue];
+    functions [label=<Cloud Functions<BR/>validacao e regras de negocio>, fillcolor=lightblue];
+  }
+  subgraph cluster_services {
+    label=<TB3 | servicos externos de teste e desenvolvimento>; color=darkolivegreen; style=dashed; penwidth=2;
+    stripe [label=<Stripe test<BR/>API e webhook assinado>, fillcolor=honeydew];
+    algolia [label=<Algolia development<BR/>ACL ainda a confirmar>, fillcolor=honeydew];
+  }
+  actor -> mobile [label=<entrada e acao>];
+  mobile -> auth [label=<credenciais / login>];
+  auth -> mobile [label=<ID token>];
+  mobile -> appcheck [label=<attestation>];
+  appcheck -> rules [label=<token App Check>];
+  mobile -> rules [label=<ID token + leitura/escrita>];
+  rules -> firestore [label=<consulta / commit autorizado>];
+  rules -> storage [label=<upload / download autorizado>];
+  mobile -> functions [label=<callable: ID token + payload nao confiavel>];
+  functions -> firestore [label=<validacao e persistencia servidor>];
+  functions -> stripe [label=<operacao em modo teste>];
+  stripe -> functions [label=<evento + assinatura>];
+  mobile -> algolia [label=<busca com chave de ACL minima>];
+  firestore -> mobile [label=<dados filtrados pela regra>];
+  storage -> mobile [label=<objeto autorizado>];
+}

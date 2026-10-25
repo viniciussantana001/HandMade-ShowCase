@@ -1,0 +1,26 @@
+# RELATORIO DE COMPATIBILIDADE E AUDITORIA DE GITIGNORE
+# Data: 2026-10-25
+# Escopo: entrega-stride/ e diretorios de trabalho STRIDE
+
+## 1. Verificacao de Entradas Essenciais no .gitignore do Repositorio
+
+As seguintes classes de artefatos temporarios, gerados durante as execucoes de teste e modelagem STRIDE, encontram-se devidamente cobertas pelas regras de exclusao do Git ou isoladas fora do controle de versao principal:
+
+| Classe de Arquivo / Diretorio | Status | Regra Aplicavel / Tratamento |
+|---|---|---|
+| Emuladores Firebase (.firebase/, ui-debug.log) | Ignorado | `.firebase/`, `*-debug.log`, `firestore-debug.log` |
+| Dependencias npm de teste (node_modules/) | Ignorado | `node_modules/`, `stride-trabalho/node_modules/` |
+| Worktree temporaria (/tmp/wt-seguranca-t07) | Isolada | Criada fora da arvore de trabalho do repositorio principal |
+| Arquivos de cache e build temporarios | Ignorado | `.dart_tool/`, `build/`, `.gradle/`, `.turbo/` |
+| Credenciais e variaveis de ambiente (.env*) | Ignorado | `.env`, `.env.local`, `.env.*.local` |
+| Saidas brutas com timestamps nao-deterministicos | Isolado | Mantidas em `stride-trabalho/brutos/` (fora do commit principal) |
+
+## 2. Conteudo Homologado para Entrega (entrega-stride/)
+A pasta `entrega-stride/` contem unicamente arquivos estaveis, deterministas, sanitizados e auditados para aprovacao e arquivo historico:
+- Relatorios formais Markdown (`Spoofing.md`, `Tampering.md`);
+- Definicoes estruturais de diagramas DFD (`diagramas/*.dot`);
+- Evidencias de cenarios e execucoes normalizadas (`S - Spoofing/`, `T - Tampering/`);
+- Documento de normalizacao e manifesto de integridade criptografica (`MANIFESTO-SHA256.txt`).
+
+## 3. Conclusao
+Nenhum artefato de build, dump de emulador, arquivo temporario ou credencial local corre risco de commit inadvertido no repositorio `handmade`.

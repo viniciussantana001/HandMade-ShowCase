@@ -1,0 +1,38 @@
+# RELATORIO DE VERIFICACAO DE SANITIZACAO E AUDITORIA DE SEGREDOS
+# Data da Auditoria: 2026-10-25
+# Escopo: entrega-stride/Modelagens de Ameaças/
+
+## 1. Escopo de Arquivos Auditados
+Todos os arquivos integrantes da pasta de entrega oficial `entrega-stride/Modelagens de Ameaças/`, incluindo:
+- Diagramas DFD (.dot)
+- Documentos de normalizacao e configuracao (_comum/)
+- Relatorios e cenarios de Spoofing (APP-S01, APP-S02, APP-S03, APP-S05)
+- Relatorios e cenarios de Tampering (APP-T01, APP-T05, APP-T07)
+- Scripts de teste, diffs de correcao e analises de impacto
+
+## 2. Padroes Verificados e Resultados
+
+### 2.1 Caminhos Absolutos de Host e Nomes de Usuario
+- **Padroes avaliados:** `C:\Users\*`, `D:\projetos\*`, `/home/*`, nomes de usuarios de sistema operacional.
+- **Resultado:** APROVADO.
+- **Detalhamento:** Todos os caminhos nos artefatos de entrega foram convertidos para caminhos relativos ao repositorio (`firebase/firestore.rules`, `functions/src/...`, `apps/mobile/...`) ou caminhos relativos ao pacote de testes.
+
+### 2.2 Enderecos de E-mail
+- **Padroes avaliados:** Expressoes regulares para deteccao de e-mails em formato RFC 5322 (`[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}`).
+- **Resultado:** APROVADO.
+- **Detalhamento:** Nao constam e-mails de desenvolvedores, mantenedores ou contas reais. As unicas ocorrencias do caractere `@` correspondem a:
+  - Referencias literais de linha do validador de regras do Firebase (`@ L63`, `@ L104`, `@ L580`);
+  - Notacao de hunk em arquivos unificados de diff (`@@ -74,7 +74,6 @@`);
+  - Nomes de pacotes npm de teste nos logs de normalizacao (`@firebase/firestore`).
+
+### 2.3 Chaves Criptograficas, Tokens e Segredos
+- **Padroes avaliados:** Chaves de API do Google Cloud / Firebase (`AIza[0-9A-Za-z-_]{35}`), chaves Stripe (`sk_live_...`, `sk_test_...`, `whsec_...`), segredos de servico e tokens JWT de producao.
+- **Resultado:** APROVADO.
+- **Detalhamento:** Nenhum segredo presente. Os testes foram integralmente executados contra a suite local de emuladores (`demo-handmade`) com tokens sinteticos gerados em memoria pelo emulador de autenticacao. Na analise de webhooks, os identificadores de segredos sao estritamente declarativos (`secrets: [stripeTestSecretKey, stripeWebhookSecret]`), conforme gerenciado pelo Cloud Secret Manager.
+
+### 2.4 Identificadores de Projeto e Hosts
+- **Projeto verificado:** `demo-handmade` (synthetic emulator ID exclusivo). Nenhuma referencia ou comunicacao com o projeto `handmade-development`.
+- **Hosts e Portas verificados:** Estritamente `127.0.0.1` nas portas locais de emulacao (19099, 18080, 19199).
+
+## 3. Declaracao de Conformidade
+Atesta-se que todos os arquivos da entrega `entrega-stride/Modelagens de Ameaças/` estao em conformidade com as diretrizes de sanitizacao, livres de dados pessoais (LGPD/GDPR), sem vazamento de caminhos internos da maquina de desenvolvimento e sem presenca de credenciais ativas.

@@ -1,0 +1,22 @@
+digraph prototype_dfd {
+  graph [rankdir=LR, bgcolor=white, pad=0.35, nodesep=0.6, ranksep=0.85, fontname=Arial, fontsize=20, label=<DFD | Prototipo 5.0 - execucao local>, labelloc=t];
+  node [shape=box, style=rounded, fontname=Arial, fontsize=11, color=slategray, fillcolor=white, margin=0.16];
+  edge [fontname=Arial, fontsize=9, color=slategray, arrowsize=0.75];
+  actor [shape=oval, label=<Pessoa usuaria>, fillcolor=honeydew];
+  subgraph cluster_browser {
+    label=<TB1 | navegador controlado pelo usuario>; color=darkorange; style=dashed; penwidth=2;
+    app [label=<React / TypeScript<BR/>Prototipo 5.0 em localhost>, fillcolor=moccasin];
+    session [shape=cylinder, label=<Session / local storage<BR/>conteudo editavel pelo cliente>, fillcolor=moccasin];
+    mock [shape=cylinder, label=<Store / fixtures locais<BR/>precos, usuarios e pedidos mockados>, fillcolor=moccasin];
+    browserapi [label=<APIs do navegador<BR/>rotas, rede, console>];
+  }
+  boundary [shape=note, label=<Sem servidor de autorizacao confirmado<BR/>Estado local nao prova controle de acesso remoto>, fillcolor=beige];
+  actor -> app [label=<entrada e navegacao>];
+  app -> session [label=<leitura / escrita local>];
+  session -> app [label=<identidade / estado mutavel>];
+  app -> mock [label=<consulta e mutacao local>];
+  mock -> app [label=<resultado de simulacao>];
+  app -> browserapi [label=<eventos e requisicoes observaveis>];
+  browserapi -> app [label=<resposta local>];
+  app -> boundary [style=dashed, arrowhead=none, label=<limite de validade da prova>];
+}

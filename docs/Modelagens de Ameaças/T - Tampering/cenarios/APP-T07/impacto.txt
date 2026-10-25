@@ -1,0 +1,49 @@
+# Analise de Impacto — Vetor APP-T07 (Forja de sellerActivatedAt)
+
+## 1. Descricao da Vulnerabilidade
+O campo `sellerActivatedAt` constava indevidamente na allowlist de criacao (`allow create`, linha 77 de `firebase/firestore.rules`) do documento `users/{uid}`, sem qualquer validacao de tipo, autoridade ou valor. Isso permitia que um cliente forjasse uma data arbitraria no momento do cadastro inicial da conta.
+
+## 2. Consumo Downstream na Base de Codigo
+
+### 2.1 Gravacao Legitima (Backend)
+- **Arquivo:** `functions/src/listings/publish-listing.ts:172-174`
+- **Trecho:**
+  ```typescript
+  if (!(profile.sellerActivatedAt instanceof Timestamp)) {
+    transaction.update(profileRef, { sellerActivatedAt: now });
+  }
+  ```
+- O backend atua como autoridade: quando o vendedor publica seu primeiro anuncio, se o campo ainda nao existir, ele e preenchido com o timestamp atual (`now`).
+- **Problema:** se o cliente ja enviou um timestamp na criacao da conta, `profile.sellerActivatedAt instanceof Timestamp` avalia como verdadeiro e o backend nao sobrescreve o valor forjado.
+
+### 2.2 Projecao Publica do Vendedor
+- **Arquivo:** `functions/src/profile/seller-profile-projection.ts:38`
+- **Trecho:**
+  ```typescript
+  const sellerSince = timestamp(profile.sellerActivatedAt);
+  ```
+- O campo e projetado para a colecao publica `sellerProfiles/{uid}` sob o nome `sellerSince`.
+
+### 2.3 Exibicao no Aplicativo Movel
+- **Arquivos:**
+  - `apps/mobile/lib/features/profile/data/firebase_seller_profile_repository.dart:66`
+  - `apps/mobile/lib/features/profile/presentation/seller_profile_page.dart:311`
+- **Exibicao:**
+  `'Membro desde ${formatMonthYear(profile.sellerSince)}'`
+- O dado e exibido publicamente para potenciais compradores como indicador de reputacao e antiguidade do vendedor na plataforma.
+
+## 3. Classificacao de Severidade e Risco
+
+| Elemento | Severidade | Justificativa |
+|---|---|---|
+| Entrada de cliente nao validada (L77 da regra) | **ALTA** | Permite ao atacante definir arbitrariamente sua data de antiguidade na criacao da conta. |
+| Consumo downstream em projecao publica | **ALTA** | Impacta diretamente a confianca dos compradores e os mecanismos de reputacao do marketplace. |
+| Gravacao de backend (`publish-listing.ts`) | **BAIXA** | O runtime apenas preenche quando ausente; nao contem falha logica em si, dependia da sanidade dos dados. |
+
+**Severidade Geral:** **ALTA** (CVSS estimado: 7.1 — AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N).
+
+## 4. Mitigacao e Eficacia
+A correcao minima de 1 linha (remocao de `sellerActivatedAt` da allowlist de `create`) fecha completamente o vetor de ataque:
+- Clientes sao impedidos de enviar o campo na criacao (`PERMISSION_DENIED`);
+- Clientes sao impedidos de injetar o campo no update pela regra de imutabilidade (L122-123);
+- Apenas a Cloud Function privilegiada (`publish-listing.ts`) via Admin SDK consegue registrar o primeiro timestamp de ativacao real do vendedor.

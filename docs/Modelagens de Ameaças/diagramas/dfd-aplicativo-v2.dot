@@ -1,0 +1,51 @@
+digraph HandMadeAppV2 {
+  graph [rankdir=LR, compound=true, newrank=true, splines=polyline, nodesep=0.55, ranksep=0.85, pad=0.25, bgcolor="white", fontname="Arial", fontsize=18, label="DFD - HandMade app final / development (published config partially unverified)", labelloc=t];
+  node [shape=box, style="rounded,filled", fillcolor="#F7FAFC", color="#52667A", fontname="Arial", fontsize=10, margin="0.14,0.10"];
+  edge [color="#66788A", fontname="Arial", fontsize=9, arrowsize=0.75];
+
+  user [shape=ellipse, fillcolor="#FFF6E5", label="User\nbuyer / seller"];
+
+  subgraph cluster_device {
+    label="TB1 - user-controlled Android device";
+    color="#D9822B";
+    style="dashed";
+    mobile [label="Flutter app\nUI, local state, client payload"];
+    appcheck [label="App Check client\nattestation / token"];
+  }
+
+  subgraph cluster_firebase {
+    label="TB2 - Firebase development services";
+    color="#3978A8";
+    style="dashed";
+    auth [shape=component, label="Firebase Authentication\nUID + signed claims"];
+    rules [shape=diamond, label="Firestore / Storage Rules\nidentity + ownership + fields"];
+    functions [label="Cloud Functions\nidentity + business validation"];
+    firestore [shape=cylinder, label="Cloud Firestore\nprofiles, listings, chats, orders"];
+    storage [shape=cylinder, label="Cloud Storage\nlisting media / uploads"];
+  }
+
+  subgraph cluster_external {
+    label="TB3 - external providers (development / test only)";
+    color="#708A3C";
+    style="dashed";
+    stripe [label="Stripe test\ncheckout + signed webhook"];
+    algolia [label="Algolia development\nsearch ACL / index sync"];
+    fcm [label="Firebase Cloud Messaging\npush delivery"];
+  }
+
+  user -> mobile [label="input / actions"];
+  mobile -> auth [label="credentials / provider sign-in"];
+  auth -> mobile [label="Firebase ID token"];
+  mobile -> appcheck [label="device attestation"];
+  appcheck -> mobile [label="App Check token"];
+  mobile -> rules [label="direct request + ID token + App Check token"];
+  rules -> firestore [label="authorized read / limited direct write"];
+  rules -> storage [label="authorized upload / download"];
+  mobile -> functions [label="callable or HTTPS request\nclient payload is untrusted"];
+  functions -> firestore [label="server validation / transaction"];
+  firestore -> functions [label="onCreate / onWrite triggers"];
+  storage -> functions [label="media event"];
+  functions -> storage [label="validated media processing"];
+  functions -> stripe [label="test checkout API"];
+  stripe -> functions [label="webhook + signature"];
+}

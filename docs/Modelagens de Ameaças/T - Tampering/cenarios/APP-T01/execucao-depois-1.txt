@@ -1,0 +1,11 @@
+=== APP-T01: mass assignment em users/{uid} ===
+T01 create sem campo reservado (controle): PERMITIDO
+T01 create com role=admin: NEGADO :: 7 PERMISSION_DENIED: evaluation error at L187:24 for 'create' @ L187, false for 'create' @ L580, false for 'update' @ L208, false for 'update' @ L580
+T01 create com status=suspended: NEGADO :: 7 PERMISSION_DENIED: evaluation error at L187:24 for 'create' @ L187, false for 'create' @ L580, false for 'update' @ L208, false for 'update' @ L580
+T01 create com subscriptionPlan=enterprise: NEGADO :: 7 PERMISSION_DENIED: evaluation error at L187:24 for 'create' @ L187, false for 'create' @ L580, false for 'update' @ L208, false for 'update' @ L580
+T01 create com emailVerified divergente: NEGADO :: 7 PERMISSION_DENIED: evaluation error at L187:24 for 'create' @ L187, false for 'create' @ L580, false for 'update' @ L208, false for 'update' @ L580
+T01 create com campo fora da allowlist: NEGADO :: 7 PERMISSION_DENIED: evaluation error at L187:24 for 'create' @ L187, false for 'create' @ L580, false for 'update' @ L208, false for 'update' @ L580
+T01 update com role=admin: NEGADO :: 7 PERMISSION_DENIED: evaluation error at L104:24 for 'update' @ L104, false for 'update' @ L580
+T01 update com status=deleted: NEGADO :: 7 PERMISSION_DENIED: evaluation error at L104:24 for 'update' @ L104, false for 'update' @ L580
+T01 update com subscriptionPlan=enterprise: NEGADO :: 7 PERMISSION_DENIED: evaluation error at L104:24 for 'update' @ L104, false for 'update' @ L580
+RESULT T01 = BLOQUEADO :: criacao legitima aceita; nenhum campo reservado aceito na criacao nem na atualizacao ({"controleCriacao":"permitido","roleNaCriacao":"negado","statusNaCriacao":"negado","planNaCriacao":"negado","verifiedNaCriacao":"negado","extraNaCriacao":"negado","roleNoUpdate":"negado","statusNoUpdate":"negado","planNoUpdate":"negado"})

@@ -1,0 +1,43 @@
+1556a3d706eec16e89bdaa59ad96964fe286e1e86376a4bacfb6fa285609a35c  entrega-stride/Modelagens de Ameaças/_comum/normalizacao.txt
+af17d50725e7bd276995fffa229c50fd8d1f27db53a5e8f4aa6bb72e3423a05c  entrega-stride/Modelagens de Ameaças/diagramas/dfd-aplicativo-v2.dot
+06de5d324fc88d57f16003b570303be174a9e0b87f82b37e4b09a01629cb6a08  entrega-stride/Modelagens de Ameaças/diagramas/dfd-aplicativo.dot
+ccb7bed28f6ae95656be92b65dad739ba12af16128b7cb1ac2a0f348cad829d9  entrega-stride/Modelagens de Ameaças/diagramas/dfd-prototipo.dot
+9063de95f9980119c795138383df7bf24bf39a6f4d81eaadb685dccfcf997a68  entrega-stride/Modelagens de Ameaças/gitignore-relatorio.txt
+6c2478cbddc96696881a0b37e4202bbd087c91c84802acd083670a2f09339d2f  entrega-stride/Modelagens de Ameaças/S - Spoofing/cenarios/APP-S01/execucao-antes-1.txt
+6c2478cbddc96696881a0b37e4202bbd087c91c84802acd083670a2f09339d2f  entrega-stride/Modelagens de Ameaças/S - Spoofing/cenarios/APP-S01/execucao-antes-2.txt
+6c2478cbddc96696881a0b37e4202bbd087c91c84802acd083670a2f09339d2f  entrega-stride/Modelagens de Ameaças/S - Spoofing/cenarios/APP-S01/execucao-depois-1.txt
+6c2478cbddc96696881a0b37e4202bbd087c91c84802acd083670a2f09339d2f  entrega-stride/Modelagens de Ameaças/S - Spoofing/cenarios/APP-S01/execucao-depois-2.txt
+4801247bdeaba2450e1ac5f5d82433c0d83747ee280a49674fff9134e0e0474a  entrega-stride/Modelagens de Ameaças/S - Spoofing/cenarios/APP-S01/resultado.json
+6289849ae21948a30a496ed09d6589b000de6bc4c4b5e49930a86934fbe3313d  entrega-stride/Modelagens de Ameaças/S - Spoofing/cenarios/APP-S01/teste/cenarios5.mjs
+d2ee79ba2acd57e18f244e13e844996938887a86e6292b279a5331c344c6e42d  entrega-stride/Modelagens de Ameaças/S - Spoofing/cenarios/APP-S02-analise-estatica/analise-estatica.md
+ce554a8134523c6cdc4d85b5448e1ed71e2278a4ba3976d8b749fd8f1c7c9c02  entrega-stride/Modelagens de Ameaças/S - Spoofing/cenarios/APP-S02-analise-estatica/resultado.json
+81dc7998952d803701a4681f504c765e963e043d8d3c9063a9dd95c1aedd26d6  entrega-stride/Modelagens de Ameaças/S - Spoofing/cenarios/APP-S03/execucao-antes-1.txt
+81dc7998952d803701a4681f504c765e963e043d8d3c9063a9dd95c1aedd26d6  entrega-stride/Modelagens de Ameaças/S - Spoofing/cenarios/APP-S03/execucao-antes-2.txt
+81dc7998952d803701a4681f504c765e963e043d8d3c9063a9dd95c1aedd26d6  entrega-stride/Modelagens de Ameaças/S - Spoofing/cenarios/APP-S03/execucao-depois-1.txt
+81dc7998952d803701a4681f504c765e963e043d8d3c9063a9dd95c1aedd26d6  entrega-stride/Modelagens de Ameaças/S - Spoofing/cenarios/APP-S03/execucao-depois-2.txt
+e1ebaea6b5c60131b6de2ebce111cf4768e430b440168e1d63d6e68a538f79d0  entrega-stride/Modelagens de Ameaças/S - Spoofing/cenarios/APP-S03/resultado.json
+6289849ae21948a30a496ed09d6589b000de6bc4c4b5e49930a86934fbe3313d  entrega-stride/Modelagens de Ameaças/S - Spoofing/cenarios/APP-S03/teste/cenarios5.mjs
+d1a86929612c5057557414ebb1bcb3a8606facf6f7ca4e1217434f397cca9b04  entrega-stride/Modelagens de Ameaças/S - Spoofing/cenarios/APP-S05-analise-estatica/analise-estatica.md
+f6fbb900e1b4d6b3df3eeeda6881ccde3f8c9a7b0d34600ec9e033f7519990f2  entrega-stride/Modelagens de Ameaças/S - Spoofing/cenarios/APP-S05-analise-estatica/resultado.json
+0b3228ff7188be5c48dbdd5d8c65d2392caf18fcd73b7b5a8dad9ba8736adbaa  entrega-stride/Modelagens de Ameaças/T - Tampering/cenarios/APP-T01/execucao-antes-1.txt
+0b3228ff7188be5c48dbdd5d8c65d2392caf18fcd73b7b5a8dad9ba8736adbaa  entrega-stride/Modelagens de Ameaças/T - Tampering/cenarios/APP-T01/execucao-antes-2.txt
+0b3228ff7188be5c48dbdd5d8c65d2392caf18fcd73b7b5a8dad9ba8736adbaa  entrega-stride/Modelagens de Ameaças/T - Tampering/cenarios/APP-T01/execucao-depois-1.txt
+0b3228ff7188be5c48dbdd5d8c65d2392caf18fcd73b7b5a8dad9ba8736adbaa  entrega-stride/Modelagens de Ameaças/T - Tampering/cenarios/APP-T01/execucao-depois-2.txt
+684bbbebd4b51f14c2648b079a4f9bdb3d142f18e2eb394bd4816a21e7f40220  entrega-stride/Modelagens de Ameaças/T - Tampering/cenarios/APP-T01/resultado.json
+6289849ae21948a30a496ed09d6589b000de6bc4c4b5e49930a86934fbe3313d  entrega-stride/Modelagens de Ameaças/T - Tampering/cenarios/APP-T01/teste/cenarios5.mjs
+83c1ffcef0f300a928de384b8c4c8f58a519b39d63f1f9fe18b5fd882537344e  entrega-stride/Modelagens de Ameaças/T - Tampering/cenarios/APP-T05/execucao-antes-1.txt
+83c1ffcef0f300a928de384b8c4c8f58a519b39d63f1f9fe18b5fd882537344e  entrega-stride/Modelagens de Ameaças/T - Tampering/cenarios/APP-T05/execucao-antes-2.txt
+83c1ffcef0f300a928de384b8c4c8f58a519b39d63f1f9fe18b5fd882537344e  entrega-stride/Modelagens de Ameaças/T - Tampering/cenarios/APP-T05/execucao-depois-1.txt
+83c1ffcef0f300a928de384b8c4c8f58a519b39d63f1f9fe18b5fd882537344e  entrega-stride/Modelagens de Ameaças/T - Tampering/cenarios/APP-T05/execucao-depois-2.txt
+5e04cabb61381e1e94c68e01b0ba0b3ce975c8e0935d020cf66040881c793a8a  entrega-stride/Modelagens de Ameaças/T - Tampering/cenarios/APP-T05/resultado.json
+6289849ae21948a30a496ed09d6589b000de6bc4c4b5e49930a86934fbe3313d  entrega-stride/Modelagens de Ameaças/T - Tampering/cenarios/APP-T05/teste/cenarios5.mjs
+34d10c3874771949579ded9da4a4fed72840417263e43cddce0ab280cf61b866  entrega-stride/Modelagens de Ameaças/T - Tampering/cenarios/APP-T07/controle-adicao-posterior.txt
+ac80af64b3332ebb217c0bc8f76771142b8111bef68fe93984c5983c4c8da20c  entrega-stride/Modelagens de Ameaças/T - Tampering/cenarios/APP-T07/correcao.diff
+f20dc85f028ce34dcbd2d0e8ae125e48c54a5fee823655b1254a56b46250107b  entrega-stride/Modelagens de Ameaças/T - Tampering/cenarios/APP-T07/execucao-antes-1.txt
+f20dc85f028ce34dcbd2d0e8ae125e48c54a5fee823655b1254a56b46250107b  entrega-stride/Modelagens de Ameaças/T - Tampering/cenarios/APP-T07/execucao-antes-2.txt
+a7effeddefbd59fffc2002fa029cab746cb82efc09a18c36fe9788f91ebd3964  entrega-stride/Modelagens de Ameaças/T - Tampering/cenarios/APP-T07/execucao-depois-1.txt
+a7effeddefbd59fffc2002fa029cab746cb82efc09a18c36fe9788f91ebd3964  entrega-stride/Modelagens de Ameaças/T - Tampering/cenarios/APP-T07/execucao-depois-2.txt
+cc1c3226092e881713c5ca0d1a58a51c8b57b9d275cb5f693d09042f8058f0d1  entrega-stride/Modelagens de Ameaças/T - Tampering/cenarios/APP-T07/impacto.txt
+94c665595d8c22281d7b5b9e8106fbcf32bb3ae1f63b12c696ea2d406643bb28  entrega-stride/Modelagens de Ameaças/T - Tampering/cenarios/APP-T07/resultado.json
+6289849ae21948a30a496ed09d6589b000de6bc4c4b5e49930a86934fbe3313d  entrega-stride/Modelagens de Ameaças/T - Tampering/cenarios/APP-T07/teste/cenarios5.mjs
+d3efd2135ab4ce780ab2a35999218d493b3bd459dfc3a5c47026f47dc7a82607  entrega-stride/Modelagens de Ameaças/verificacao-sanitizacao.txt

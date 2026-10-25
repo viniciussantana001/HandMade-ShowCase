@@ -1,0 +1,22 @@
+# Metodologia de Normalizacao de Saidas de Emuladores
+
+## Objetivo
+Garantir que execucoes sucessivas do mesmo pacote de testes sobre o mesmo conjunto de regras produzam saidas comparaveis por hash criptografico (SHA-256), eliminando fatores nao-deterministicos inerentes ao runtime dos emuladores Firebase.
+
+## Elementos Nao-Deterministicos Removidos
+1. Timestamps ISO: timestamps de log como `2026-10-25T16:03:30.303Z` substituidos por `[TIMESTAMP]`.
+2. Identificadores de Stream gRPC: ponteiros de conexao como `stream 0x8a9fc445` substituidos por `STREAMID`.
+3. Linhas vazias redundantes e espacamento inconsistente.
+4. Linhas de log interno de comunicacao gRPC do emulador (@firebase/firestore GrpcConnection RPC 'Write'), cuja frequencia e ordem variam de acordo com o agendamento de I/O do sistema operacional, preservando integralmente todas as linhas de probes (`PERMITIDO`, `NEGADO`) e de veredicto (`RESULT`, `TESTES_CONCLUIDOS`, JSON de resultados).
+
+## Verificacao de Convergencia
+Ao extrair as linhas de probe e veredicto das duas rodadas sobre a regra original (`firestore.rules`, SHA-256 `d5b016c62e521b248d7a694c89c5a0f62c9b20e672a7b24422ed6b47953a25b6`), obteve-se SHA-256 identico:
+- Rodada 1: `c14b08a3440ce635db175123b197c67d9720630b88be50033d6b08e91061128e`
+- Rodada 2: `c14b08a3440ce635db175123b197c67d9720630b88be50033d6b08e91061128e`
+
+Veredictos estaveis em ambas as rodadas:
+- S01: BLOQUEADO
+- S03: BLOQUEADO
+- T01: BLOQUEADO
+- T07: BURLADO
+- T05: BLOQUEADO

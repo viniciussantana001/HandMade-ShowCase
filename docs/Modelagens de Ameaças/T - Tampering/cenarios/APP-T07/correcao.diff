@@ -1,0 +1,12 @@
+diff --git a/firebase/firestore.rules b/firebase/firestore.rules
+index 0be5f3d..0f6080a 100644
+--- a/firebase/firestore.rules
++++ b/firebase/firestore.rules
+@@ -74,7 +74,6 @@ service cloud.firestore {
+           'roleTitle', 'phone', 'city', 'state', 'companyDescription',
+           'emailVerified', 'role', 'status', 'subscriptionPlan',
+           'profileStatus', 'schemaVersion', 'revision', 'lastProfileRequestId',
+-          'sellerActivatedAt',
+           'lastProfileUpdateRequestId', 'createdAt', 'updatedAt'
+         ])
+         && request.resource.data.uid == uid

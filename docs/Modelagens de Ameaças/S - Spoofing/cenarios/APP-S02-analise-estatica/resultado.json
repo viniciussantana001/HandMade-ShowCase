@@ -1,0 +1,13 @@
+{
+  "cenario": "APP-S02",
+  "categoria": "Spoofing",
+  "tipo": "analise-estatica",
+  "alvo": "functions/src/**/*.ts",
+  "propriedadeSeguranca": "Resolucao de identidade do chamador em funcoes onCall deriva exclusivamente de request.auth",
+  "veredictoAntes": "BLOQUEADO",
+  "veredictoDepois": "BLOQUEADO",
+  "statusFinal": "BLOQUEADO",
+  "totalEndpointsAuditados": 38,
+  "endpointsVulneraveis": 0,
+  "observacoes": "Todos os 38 endpoints onCall mapeados derivam a identidade do ator a partir de request.auth.uid validado pelo Firebase Auth, utilizando helpers de assercao (requireChatUser, requireVerifiedSeller, requirePrivacyUser, requireModerator). Nenhum endpoint aceita UID pelo payload do cliente para definir o autor da operacao."
+}

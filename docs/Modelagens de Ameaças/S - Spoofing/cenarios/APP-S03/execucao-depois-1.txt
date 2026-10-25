@@ -1,0 +1,5 @@
+=== APP-S03: token sem e-mail verificado ===
+S03 leitura do proprio caminho por token nao verificado (controle): PERMITIDO
+S03 escrita com emailVerified divergente do token: NEGADO :: 7 PERMISSION_DENIED: evaluation error at L187:24 for 'create' @ L187, false for 'create' @ L580, false for 'update' @ L208, false for 'update' @ L580
+S03 escrita com emailVerified compativel com o token: PERMITIDO
+RESULT S03 = BLOQUEADO :: escrita com emailVerified divergente do token negada; a mesma escrita com token compativel aceita; leitura propria permitida

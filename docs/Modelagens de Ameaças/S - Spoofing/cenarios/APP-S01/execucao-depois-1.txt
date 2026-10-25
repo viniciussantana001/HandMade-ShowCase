@@ -1,0 +1,6 @@
+=== APP-S01: acesso cross-user autenticado ===
+S01 A le perfil de B: NEGADO :: false for 'get' @ L63, false for 'get' @ L580
+S01 A escreve no perfil de B: NEGADO :: 7 PERMISSION_DENIED: false for 'update' @ L104, false for 'update' @ L580
+S01 leitura de B sem token: NEGADO :: false for 'get' @ L63, false for 'get' @ L580
+S01 A le o proprio perfil (controle): PERMITIDO
+RESULT S01 = BLOQUEADO :: leitura e escrita de B negadas a A e a anonimo; leitura propria permitida

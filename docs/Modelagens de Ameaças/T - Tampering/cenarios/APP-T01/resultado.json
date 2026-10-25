@@ -1,0 +1,10 @@
+{
+  "cenario": "APP-T01",
+  "categoria": "Tampering",
+  "alvo": "users/{uid}",
+  "propriedadeSeguranca": "Campos reservados (role, status, subscriptionPlan, emailVerified) e campos fora da allowlist sao rejeitados na criacao e atualizacao",
+  "veredictoAntes": "BLOQUEADO",
+  "veredictoDepois": "BLOQUEADO",
+  "statusFinal": "BLOQUEADO",
+  "observacoes": "A allowlist hasOnly() combinada com checagens de valor bloqueia mass assignment tanto no create quanto no update de users/{uid}."
+}
