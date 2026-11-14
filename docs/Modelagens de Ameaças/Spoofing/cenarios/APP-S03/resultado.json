@@ -1,0 +1,10 @@
+{
+  "cenario": "APP-S03",
+  "categoria": "Spoofing",
+  "alvo": "users/{uid}",
+  "propriedadeSeguranca": "Estado de verificacao de e-mail do token e checado contra o documento na escrita de registro (emailVerified == token.email_verified)",
+  "veredictoAntes": "BLOQUEADO",
+  "veredictoDepois": "BLOQUEADO",
+  "statusFinal": "BLOQUEADO",
+  "observacoes": "Escrita com emailVerified=true para conta cujo token contem email_verified=false e negada pela regra. A mesma escrita com token verificado e aceita. Leitura propria pelo usuario nao verificado permanece permitida."
+}

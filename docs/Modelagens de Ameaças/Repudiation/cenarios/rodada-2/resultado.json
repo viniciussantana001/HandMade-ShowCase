@@ -1,0 +1,866 @@
+{
+  "rodada": "2",
+  "alvo": {
+    "projectId": "demo-handmade",
+    "host": "127.0.0.1",
+    "porta": 18080,
+    "functionsEmulator": "desligado"
+  },
+  "regras": {
+    "arquivo": "repositorio/firebase/firestore.rules",
+    "sha256": "d5b016c62e521b248d7a694c89c5a0f62c9b20e672a7b24422ed6b47953a25b6"
+  },
+  "veredictos": {
+    "APP-R01": "BLOQUEADO",
+    "APP-R02": "BLOQUEADO",
+    "APP-R03": "BLOQUEADO",
+    "APP-R04": "BLOQUEADO",
+    "APP-R05": "BLOQUEADO",
+    "APP-R06": "BLOQUEADO",
+    "APP-R07": "BLOQUEADO",
+    "APP-R08": "BLOQUEADO",
+    "APP-R09": "BLOQUEADO",
+    "APP-R10": "BLOQUEADO"
+  },
+  "hashVeredictos": "54b0779e95f72ff6a5a80725b154ff6237f222359d494cd57a637b758dad3aab",
+  "totalProbes": 92,
+  "divergentes": 0,
+  "observacoes": [
+    {
+      "cenario": "APP-R08",
+      "id": "R08.obs",
+      "campo": "valor-anterior-de-fullName-preservado-no-documento",
+      "valor": false
+    }
+  ],
+  "probes": [
+    {
+      "cenario": "APP-R01",
+      "id": "R01.1",
+      "esperado": "PERMITIDO",
+      "observado": "PERMITIDO",
+      "ok": true,
+      "descricao": "comprador participante le evento",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R01",
+      "id": "R01.2",
+      "esperado": "PERMITIDO",
+      "observado": "PERMITIDO",
+      "ok": true,
+      "descricao": "vendedor participante le evento",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R01",
+      "id": "R01.3",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "terceiro le evento",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R01",
+      "id": "R01.4",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "anonimo le evento",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R01",
+      "id": "R01.5",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "comprador altera actorUid de evento existente",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R01",
+      "id": "R01.6",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "vendedor apaga evento",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R01",
+      "id": "R01.7",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "comprador cria evento forjado com actorUid do vendedor",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R01",
+      "id": "R01.8",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "vendedor altera status do pedido diretamente",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R01",
+      "id": "R01.9",
+      "esperado": "PERMITIDO",
+      "observado": "PERMITIDO",
+      "ok": true,
+      "descricao": "comprador lista eventos com limite (controle)",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R01",
+      "id": "R01.10",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "terceiro lista eventos com limite",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R02",
+      "id": "R02.1",
+      "esperado": "PERMITIDO",
+      "observado": "PERMITIDO",
+      "ok": true,
+      "descricao": "comprador participante le mensagem",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R02",
+      "id": "R02.2",
+      "esperado": "PERMITIDO",
+      "observado": "PERMITIDO",
+      "ok": true,
+      "descricao": "vendedor participante le mensagem",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R02",
+      "id": "R02.3",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "terceiro le mensagem",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R02",
+      "id": "R02.4",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "vendedor cria mensagem com senderId do comprador",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R02",
+      "id": "R02.5",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "comprador grava mensagem direta (sem caminho do servidor)",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R02",
+      "id": "R02.6",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "comprador altera conteudo da propria mensagem",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R02",
+      "id": "R02.7",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "vendedor apaga mensagem do comprador",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R02",
+      "id": "R02.8",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "comprador altera status da conversa",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R02",
+      "id": "R02.9",
+      "esperado": "PERMITIDO",
+      "observado": "PERMITIDO",
+      "ok": true,
+      "descricao": "comprador lista mensagens com limite (controle)",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R02",
+      "id": "R02.10",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "terceiro lista mensagens com limite",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R03",
+      "id": "R03.1",
+      "esperado": "PERMITIDO",
+      "observado": "PERMITIDO",
+      "ok": true,
+      "descricao": "comprador participante le proposta",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R03",
+      "id": "R03.2",
+      "esperado": "PERMITIDO",
+      "observado": "PERMITIDO",
+      "ok": true,
+      "descricao": "vendedor participante le proposta",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R03",
+      "id": "R03.3",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "terceiro le proposta",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R03",
+      "id": "R03.4",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "vendedor marca proposta como aceita diretamente",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R03",
+      "id": "R03.5",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "comprador reduz amountCents da propria proposta",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R03",
+      "id": "R03.6",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "comprador apaga proposta",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R03",
+      "id": "R03.7",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "comprador cria proposta nova diretamente",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R03",
+      "id": "R03.8",
+      "esperado": "PERMITIDO",
+      "observado": "PERMITIDO",
+      "ok": true,
+      "descricao": "comprador lista propostas filtrando participacao (controle)",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R03",
+      "id": "R03.9",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "terceiro lista propostas sem filtro",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R04",
+      "id": "R04.1",
+      "esperado": "PERMITIDO",
+      "observado": "PERMITIDO",
+      "ok": true,
+      "descricao": "comprador participante le recibo",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R04",
+      "id": "R04.2",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "terceiro le recibo",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R04",
+      "id": "R04.3",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "comprador le pagamento canonico",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R04",
+      "id": "R04.4",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "vendedor le evento do provedor",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R04",
+      "id": "R04.5",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "comprador altera status do recibo para refunded",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R04",
+      "id": "R04.6",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "vendedor grava evento de provedor forjado",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R04",
+      "id": "R04.7",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "vendedor altera estado do pagamento canonico",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R04",
+      "id": "R04.8",
+      "esperado": "PERMITIDO",
+      "observado": "PERMITIDO",
+      "ok": true,
+      "descricao": "comprador lista recibos filtrando participacao (controle)",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R05",
+      "id": "R05.1",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "comprador le trilha de auditoria",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R05",
+      "id": "R05.2",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "moderador le trilha de auditoria",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R05",
+      "id": "R05.3",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "moderador grava auditoria forjada",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R05",
+      "id": "R05.4",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "moderador altera trilha de auditoria existente",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R05",
+      "id": "R05.5",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "moderador apaga trilha de auditoria",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R05",
+      "id": "R05.6",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "anonimo le trilha de auditoria",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R05",
+      "id": "R05.7",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "moderador le nota interna de moderacao",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R05",
+      "id": "R05.8",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "moderador altera caso de moderacao diretamente",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R05",
+      "id": "R05.9",
+      "esperado": "PERMITIDO",
+      "observado": "PERMITIDO",
+      "ok": true,
+      "descricao": "moderador le denuncia (controle do claim)",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R06",
+      "id": "R06.1",
+      "esperado": "PERMITIDO",
+      "observado": "PERMITIDO",
+      "ok": true,
+      "descricao": "denunciante le a propria denuncia",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R06",
+      "id": "R06.2",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "terceiro le denuncia",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R06",
+      "id": "R06.3",
+      "esperado": "PERMITIDO",
+      "observado": "PERMITIDO",
+      "ok": true,
+      "descricao": "moderador le denuncia",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R06",
+      "id": "R06.4",
+      "esperado": "PERMITIDO",
+      "observado": "PERMITIDO",
+      "ok": true,
+      "descricao": "moderador lista denuncias com limite",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R06",
+      "id": "R06.5",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "denunciante lista denuncias sem filtro",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R06",
+      "id": "R06.6",
+      "esperado": "PERMITIDO",
+      "observado": "PERMITIDO",
+      "ok": true,
+      "descricao": "denunciante lista as proprias denuncias (filtro)",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R06",
+      "id": "R06.7",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "denunciante altera status da denuncia",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R06",
+      "id": "R06.8",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "moderador altera status da denuncia diretamente",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R06",
+      "id": "R06.9",
+      "esperado": "PERMITIDO",
+      "observado": "PERMITIDO",
+      "ok": true,
+      "descricao": "vendedor participante le disputa",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R06",
+      "id": "R06.10",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "terceiro le disputa",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R06",
+      "id": "R06.11",
+      "esperado": "PERMITIDO",
+      "observado": "PERMITIDO",
+      "ok": true,
+      "descricao": "moderador le disputa",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R06",
+      "id": "R06.12",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "comprador marca disputa como resolvida",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R06",
+      "id": "R06.13",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "moderador marca disputa como resolvida diretamente",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R07",
+      "id": "R07.1",
+      "esperado": "PERMITIDO",
+      "observado": "PERMITIDO",
+      "ok": true,
+      "descricao": "cadastro atomico do proprio titular (perfil + termos + privacidade)",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R07",
+      "id": "R07.2",
+      "esperado": "PERMITIDO",
+      "observado": "PERMITIDO",
+      "ok": true,
+      "descricao": "titular le o proprio consentimento de termos (controle)",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R07",
+      "id": "R07.3",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "terceiro le consentimento de termos alheio",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R07",
+      "id": "R07.4",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "titular altera consentimento gravado (write-once)",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R07",
+      "id": "R07.5",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "titular apaga consentimento de privacidade",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R07",
+      "id": "R07.6",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "cadastro com createdAt forjado (diferente de request.time)",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R07",
+      "id": "R07.7",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "cadastro com termos nao concedidos (granted=false)",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R07",
+      "id": "R07.8",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "cadastro sem consentimento de privacidade (vinculo do lote)",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R07",
+      "id": "R07.9",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "termos com requestId diferente do cadastro",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R07",
+      "id": "R07.10",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "termos com documentVersion diferente da versao fixada (2.0)",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R07",
+      "id": "R07.11",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "titular grava consentimento no caminho de outro uid",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R08",
+      "id": "R08.1",
+      "esperado": "PERMITIDO",
+      "observado": "PERMITIDO",
+      "ok": true,
+      "descricao": "vendedor le o proprio perfil",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R08",
+      "id": "R08.2",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "terceiro le perfil do vendedor",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R08",
+      "id": "R08.3",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "vendedor apaga o proprio perfil",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R08",
+      "id": "R08.4",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "vendedor define status deleted",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R08",
+      "id": "R08.5",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "vendedor eleva role para admin",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R08",
+      "id": "R08.6",
+      "esperado": "PERMITIDO",
+      "observado": "PERMITIDO",
+      "ok": true,
+      "descricao": "vendedor altera nome com incremento de revisao (controle)",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R08",
+      "id": "R08.7",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "vendedor repete revisao sem incrementar",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R09",
+      "id": "R09.1",
+      "esperado": "PERMITIDO",
+      "observado": "PERMITIDO",
+      "ok": true,
+      "descricao": "titular le a propria solicitacao de exclusao",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R09",
+      "id": "R09.2",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "terceiro le solicitacao de exclusao alheia",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R09",
+      "id": "R09.3",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "titular lista solicitacoes de exclusao",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R09",
+      "id": "R09.4",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "titular altera status da solicitacao para pending",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R09",
+      "id": "R09.5",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "titular le o segredo do tombstone",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R09",
+      "id": "R09.6",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "titular grava segredo de tombstone forjado",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R09",
+      "id": "R09.7",
+      "esperado": "PERMITIDO",
+      "observado": "PERMITIDO",
+      "ok": true,
+      "descricao": "titular le a propria exportacao (controle)",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R09",
+      "id": "R09.8",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "titular altera status da exportacao",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R10",
+      "id": "R10.1",
+      "esperado": "PERMITIDO",
+      "observado": "PERMITIDO",
+      "ok": true,
+      "descricao": "autor le a propria avaliacao",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R10",
+      "id": "R10.2",
+      "esperado": "PERMITIDO",
+      "observado": "PERMITIDO",
+      "ok": true,
+      "descricao": "avaliado le a avaliacao recebida",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R10",
+      "id": "R10.3",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "terceiro le a avaliacao",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R10",
+      "id": "R10.4",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "autor altera a nota",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R10",
+      "id": "R10.5",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "avaliado apaga a avaliacao",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R10",
+      "id": "R10.6",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "autor cria segunda avaliacao do mesmo pedido",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-R10",
+      "id": "R10.7",
+      "esperado": "PERMITIDO",
+      "observado": "PERMITIDO",
+      "ok": true,
+      "descricao": "autor lista avaliacoes filtrando participacao (controle)",
+      "detalhe": ""
+    }
+  ]
+}

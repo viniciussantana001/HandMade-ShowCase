@@ -1,0 +1,27 @@
+# Controle de Adicao Posterior — Vetor T07
+
+## Objetivo
+Verificar se um usuario que realizou a criacao legitima de seu perfil sem o campo `sellerActivatedAt` (conforme exigido pela regra corrigida) conseguiria injetar o campo posteriormente atraves de uma operacao de atualizacao (`update`).
+
+## Analise da Regra de Seguranca
+No arquivo `firebase/firestore.rules`, a regra de atualizacao de perfil do usuario (`allow update`) mantem `sellerActivatedAt` na allowlist de campos permitidos (L112), porem estabelece expressamente a clausula de imutabilidade (L122-123):
+
+```javascript
+&& request.resource.data.get('sellerActivatedAt', null)
+  == resource.data.get('sellerActivatedAt', null)
+```
+
+### Comportamento sob as condicoes de criacao legitima:
+1. Criacao: O documento `users/{uid}` e criado SEM o campo `sellerActivatedAt`. Portanto, `resource.data.get('sellerActivatedAt', null)` avalia como `null`.
+2. Tentativa de Injecao Posterior: O cliente envia uma mutacao via `update` contendo `sellerActivatedAt: <Timestamp>`.
+3. Avaliacao da Regra:
+   - `request.resource.data.get('sellerActivatedAt', null)` = `<Timestamp>`
+   - `resource.data.get('sellerActivatedAt', null)` = `null`
+   - Como `<Timestamp> != null`, a expressao de igualdade avalia como `false`.
+4. Resultado: A operacao de `update` e imediatamente rejeitada com `PERMISSION_DENIED`.
+
+## Conclusao
+A defesa e bidirecional e estanque:
+- A remocao de `sellerActivatedAt` da allowlist de `create` impede a forja na criacao;
+- A clausula de imutabilidade em `update` impede a adicao posterior em documentos que nao continham o campo;
+- A permanencia de `sellerActivatedAt` na allowlist de `update` e indispensavel para que o motor de regras consiga avaliar a condicao de imutabilidade sem disparar violacao de allowlist (`hasOnly`).

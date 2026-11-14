@@ -1,0 +1,7 @@
+=== APP-T07: sellerActivatedAt forjado na criacao ===
+T07 create sem sellerActivatedAt (controle): PERMITIDO
+T07 create com sellerActivatedAt do cliente: PERMITIDO
+T07 update reescrevendo sellerActivatedAt: NEGADO :: 7 PERMISSION_DENIED: evaluation error at L104:24 for 'update' @ L104, false for 'update' @ L580
+T07 leitura de sellerProfiles pelo dono (controle): PERMITIDO
+T07 leitura de projecao publica de usuario suspenso: NEGADO :: evaluation error at L173:21 for 'get' @ L173, false for 'get' @ L580
+RESULT T07 = BURLADO :: controle=permitido criacao=permitido reescrita=negado projecao=permitido projecaoAlheia=negado

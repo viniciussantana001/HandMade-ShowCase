@@ -1,0 +1,830 @@
+﻿{
+  "rodada": "1",
+  "alvo": {
+    "projectId": "demo-handmade",
+    "firestore": "127.0.0.1:18080",
+    "storage": "127.0.0.1:19199",
+    "functionsEmulator": "desligado"
+  },
+  "regras": {
+    "firestore": {
+      "arquivo": "repositorio/firebase/firestore.rules",
+      "sha256": "d5b016c62e521b248d7a694c89c5a0f62c9b20e672a7b24422ed6b47953a25b6"
+    },
+    "storage": {
+      "arquivo": "repositorio/firebase/storage.rules",
+      "sha256": "927e40dba79b93c53e82a6204fb627eb6ff4deaef3063eff7c8065b3f3f731c8"
+    }
+  },
+  "veredictos": {
+    "APP-I01": "BLOQUEADO",
+    "APP-I02": "BLOQUEADO",
+    "APP-I03": "BLOQUEADO",
+    "APP-I04": "BLOQUEADO",
+    "APP-I05": "BLOQUEADO",
+    "APP-I06": "BLOQUEADO",
+    "APP-I07": "BLOQUEADO",
+    "APP-I08": "BLOQUEADO",
+    "APP-I09": "BLOQUEADO",
+    "APP-ST01": "BLOQUEADO",
+    "APP-ST02": "BLOQUEADO",
+    "APP-ST03": "BLOQUEADO",
+    "APP-ST04": "BLOQUEADO"
+  },
+  "hashVeredictos": "d5b80207a991c16ab5e0b319fda1168aab241a7e405a4fca684eba5928220025",
+  "totalProbes": 87,
+  "divergentes": 0,
+  "observacoes": [
+    {
+      "cenario": "APP-ST04",
+      "id": "ST04.obs",
+      "campo": "avatar-legivel-por-conta-autenticada",
+      "valor": "exposicao-intencional-documentada-em-storage.rules"
+    }
+  ],
+  "probes": [
+    {
+      "cenario": "APP-I01",
+      "id": "I01.1",
+      "esperado": "PERMITIDO",
+      "observado": "PERMITIDO",
+      "ok": true,
+      "descricao": "titular le o proprio cadastro (controle)",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-I01",
+      "id": "I01.2",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "estranho le o cadastro do titular",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-I01",
+      "id": "I01.3",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "visitante sem login le o cadastro do titular",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-I01",
+      "id": "I01.4",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "estranho enumera a colecao users (limite 10)",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-I01",
+      "id": "I01.5",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "titular enumera a colecao users inteira",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-I01",
+      "id": "I01.6",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "estranho le os consentimentos do titular",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-I01",
+      "id": "I01.7",
+      "esperado": "PERMITIDO",
+      "observado": "PERMITIDO",
+      "ok": true,
+      "descricao": "titular le os proprios consentimentos (controle)",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-I02",
+      "id": "I02.1",
+      "esperado": "PERMITIDO",
+      "observado": "PERMITIDO",
+      "ok": true,
+      "descricao": "titular le um bloqueio proprio (controle)",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-I02",
+      "id": "I02.2",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "estranho le o bloqueio do titular",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-I02",
+      "id": "I02.3",
+      "esperado": "PERMITIDO",
+      "observado": "PERMITIDO",
+      "ok": true,
+      "descricao": "titular lista os proprios bloqueios com limite (controle)",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-I02",
+      "id": "I02.4",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "estranho lista os bloqueios do titular",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-I02",
+      "id": "I02.5",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "titular lista os bloqueios sem limite",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-I02",
+      "id": "I02.6",
+      "esperado": "PERMITIDO",
+      "observado": "PERMITIDO",
+      "ok": true,
+      "descricao": "titular le a propria notificacao (controle)",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-I02",
+      "id": "I02.7",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "estranho lista as notificacoes do titular",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-I02",
+      "id": "I02.8",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "visitante sem login le as notificacoes do titular",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-I03",
+      "id": "I03.1",
+      "esperado": "PERMITIDO",
+      "observado": "PERMITIDO",
+      "ok": true,
+      "descricao": "visitante le anuncio ativo (publico por desenho, controle)",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-I03",
+      "id": "I03.2",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "visitante le anuncio em rascunho",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-I03",
+      "id": "I03.3",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "visitante le anuncio removido",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-I03",
+      "id": "I03.4",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "estranho le anuncio em rascunho do titular",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-I03",
+      "id": "I03.5",
+      "esperado": "PERMITIDO",
+      "observado": "PERMITIDO",
+      "ok": true,
+      "descricao": "titular le o proprio rascunho (controle)",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-I03",
+      "id": "I03.6",
+      "esperado": "PERMITIDO",
+      "observado": "PERMITIDO",
+      "ok": true,
+      "descricao": "visitante lista anuncios ativos com filtro e limite (controle)",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-I03",
+      "id": "I03.7",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "visitante lista anuncios sem filtro (incluiria rascunhos)",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-I03",
+      "id": "I03.8",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "titular le a localizacao exata/aproximada no documento server-only",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-I03",
+      "id": "I03.9",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "estranho le a localizacao de anuncio ativo",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-I04",
+      "id": "I04.1",
+      "esperado": "PERMITIDO",
+      "observado": "PERMITIDO",
+      "ok": true,
+      "descricao": "vendedor le o estado de upload da propria midia (controle)",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-I04",
+      "id": "I04.2",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "estranho le o estado de upload e o motivo de rejeicao da midia",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-I04",
+      "id": "I04.3",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "visitante le o estado de upload da midia",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-I04",
+      "id": "I04.4",
+      "esperado": "PERMITIDO",
+      "observado": "PERMITIDO",
+      "ok": true,
+      "descricao": "visitante le metricas de anuncio ativo (publico por desenho, controle)",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-I04",
+      "id": "I04.5",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "visitante le metricas de anuncio em rascunho",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-I05",
+      "id": "I05.1",
+      "esperado": "PERMITIDO",
+      "observado": "PERMITIDO",
+      "ok": true,
+      "descricao": "visitante le perfil publico de vendedor ativo e completo (controle)",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-I05",
+      "id": "I05.2",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "visitante le perfil de vendedor com visibilidade privada",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-I05",
+      "id": "I05.3",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "visitante le perfil de vendedor suspenso",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-I05",
+      "id": "I05.4",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "visitante le perfil de vendedor com cadastro incompleto",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-I05",
+      "id": "I05.5",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "visitante enumera a colecao sellerProfiles",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-I05",
+      "id": "I05.6",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "titular altera o proprio perfil publico diretamente",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-I06",
+      "id": "I06.1",
+      "esperado": "PERMITIDO",
+      "observado": "PERMITIDO",
+      "ok": true,
+      "descricao": "visitante le agregado de avaliacao consistente (controle)",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-I06",
+      "id": "I06.2",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "visitante le agregado inconsistente (soma acima de 5 por avaliacao)",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-I06",
+      "id": "I06.3",
+      "esperado": "PERMITIDO",
+      "observado": "PERMITIDO",
+      "ok": true,
+      "descricao": "visitante le agregado inexistente sem erro de permissao (controle)",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-I06",
+      "id": "I06.4",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "visitante enumera a colecao reviewAggregates",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-I07",
+      "id": "I07.1",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "titular le o registro de pagamento canonico",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-I07",
+      "id": "I07.2",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "moderador le o registro de pagamento canonico",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-I07",
+      "id": "I07.3",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "titular le tentativas de pagamento",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-I07",
+      "id": "I07.4",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "titular le tentativas de estorno",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-I07",
+      "id": "I07.5",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "titular le eventos brutos do provedor de pagamento",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-I07",
+      "id": "I07.6",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "titular le a conexao com o provedor (dados da conta do vendedor)",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-I07",
+      "id": "I07.7",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "visitante le estados OAuth",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-I07",
+      "id": "I07.8",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "titular le vinculos de conta do provedor",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-I07",
+      "id": "I07.9",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "moderador le a configuracao da plataforma",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-I07",
+      "id": "I07.10",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "titular le os proprios registros de dispositivo (token de push)",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-I07",
+      "id": "I07.11",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "titular le jobs internos de entrega de notificacao",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-I07",
+      "id": "I07.12",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "participante le operacoes internas de idempotencia do chat",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-I07",
+      "id": "I07.13",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "titular le o limitador de taxa do proprio chat",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-I07",
+      "id": "I07.14",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "titular le operacoes internas de pedido",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-I08",
+      "id": "I08.1",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "visitante enumera pedidos",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-I08",
+      "id": "I08.2",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "visitante enumera conversas",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-I08",
+      "id": "I08.3",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "visitante enumera propostas",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-I08",
+      "id": "I08.4",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "visitante enumera recibos de pagamento",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-I08",
+      "id": "I08.5",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "estranho enumera propostas sem filtro de participacao",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-I08",
+      "id": "I08.6",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "estranho enumera pedidos sem filtro de participacao",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-I08",
+      "id": "I08.7",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "estranho enumera avaliacoes sem filtro de participacao",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-I08",
+      "id": "I08.8",
+      "esperado": "PERMITIDO",
+      "observado": "PERMITIDO",
+      "ok": true,
+      "descricao": "moderador lista denuncias com limite (controle de escopo)",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-I08",
+      "id": "I08.9",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "estranho lista denuncias sem filtro",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-I09",
+      "id": "I09.1",
+      "esperado": "PERMITIDO",
+      "observado": "PERMITIDO",
+      "ok": true,
+      "descricao": "titular le a propria solicitacao de exportacao (controle)",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-I09",
+      "id": "I09.2",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "estranho le a exportacao do titular pelo identificador",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-I09",
+      "id": "I09.3",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "visitante le a exportacao do titular",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-I09",
+      "id": "I09.4",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "titular enumera as solicitacoes de exportacao",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-I09",
+      "id": "I09.5",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "titular altera o status da propria exportacao",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-ST01",
+      "id": "ST01.1",
+      "esperado": "PERMITIDO",
+      "observado": "PERMITIDO",
+      "ok": true,
+      "descricao": "vendedor le o original da propria foto com midia pronta (controle)",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-ST01",
+      "id": "ST01.2",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "estranho le o original (foto com metadados) de outro vendedor",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-ST01",
+      "id": "ST01.3",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "visitante le o original da foto",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-ST01",
+      "id": "ST01.4",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "vendedor le o original apos a midia ser removida",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-ST02",
+      "id": "ST02.1",
+      "esperado": "PERMITIDO",
+      "observado": "PERMITIDO",
+      "ok": true,
+      "descricao": "visitante le a variante publica de anuncio ativo com midia pronta (controle)",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-ST02",
+      "id": "ST02.2",
+      "esperado": "PERMITIDO",
+      "observado": "PERMITIDO",
+      "ok": true,
+      "descricao": "visitante le a miniatura de anuncio ativo com midia pronta (controle)",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-ST02",
+      "id": "ST02.3",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "visitante le a variante de anuncio em rascunho",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-ST02",
+      "id": "ST02.4",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "estranho le a variante de anuncio em rascunho do titular",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-ST02",
+      "id": "ST02.5",
+      "esperado": "PERMITIDO",
+      "observado": "PERMITIDO",
+      "ok": true,
+      "descricao": "titular le a propria variante de anuncio em rascunho (controle)",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-ST02",
+      "id": "ST02.6",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "visitante le variante de midia ainda nao processada",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-ST03",
+      "id": "ST03.1",
+      "esperado": "PERMITIDO",
+      "observado": "PERMITIDO",
+      "ok": true,
+      "descricao": "titular le o proprio arquivo de exportacao pronto e valido (controle)",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-ST03",
+      "id": "ST03.2",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "estranho le o arquivo de exportacao do titular",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-ST03",
+      "id": "ST03.3",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "visitante le o arquivo de exportacao do titular",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-ST03",
+      "id": "ST03.4",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "titular le exportacao expirada",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-ST03",
+      "id": "ST03.5",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "titular le exportacao ainda nao pronta",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-ST03",
+      "id": "ST03.6",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "titular le outro arquivo da mesma exportacao (fora do nome permitido)",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-ST04",
+      "id": "ST04.1",
+      "esperado": "PERMITIDO",
+      "observado": "PERMITIDO",
+      "ok": true,
+      "descricao": "conta autenticada le o avatar publico minimo (exposicao intencional, registrada)",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-ST04",
+      "id": "ST04.2",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "visitante sem login le o avatar",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-ST04",
+      "id": "ST04.3",
+      "esperado": "NEGADO",
+      "observado": "NEGADO",
+      "ok": true,
+      "descricao": "estranho sobrescreve o avatar de outra conta",
+      "detalhe": ""
+    },
+    {
+      "cenario": "APP-ST04",
+      "id": "ST04.4",
+      "esperado": "PERMITIDO",
+      "observado": "PERMITIDO",
+      "ok": true,
+      "descricao": "titular troca o proprio avatar com metadado do dono (controle)",
+      "detalhe": ""
+    }
+  ]
+}

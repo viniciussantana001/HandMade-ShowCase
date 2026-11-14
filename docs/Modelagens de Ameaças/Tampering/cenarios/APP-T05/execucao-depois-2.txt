@@ -1,0 +1,9 @@
+=== APP-T05: upload no caminho de outro usuario ===
+T05 B faz upload no proprio caminho: PERMITIDO
+T05 A faz upload no caminho de B: NEGADO :: Firebase Storage: User does not have permission to access 'listing-media/uid-dono/anuncio-b/mid-b/original'. (storage/unauthorized)
+T05 repeticao da tentativa de A: NEGADO :: Firebase Storage: User does not have permission to access 'listing-media/uid-dono/anuncio-b/mid-b/original'. (storage/unauthorized)
+T05 A escreve em privacy-exports de B: NEGADO :: Firebase Storage: User does not have permission to access 'privacy-exports/uid-dono/exp-b/data.json'. (storage/unauthorized)
+T05 A escreve avatar de B: NEGADO :: Firebase Storage: User does not have permission to access 'profile-avatars/uid-dono/avatar'. (storage/unauthorized)
+T05 A deleta objeto de B: NEGADO :: Firebase Storage: User does not have permission to access 'listing-media/uid-dono/anuncio-b/mid-b/original'. (storage/unauthorized)
+T05 anonimo faz upload no caminho de B: NEGADO :: Firebase Storage: User does not have permission to access 'listing-media/uid-dono/anuncio-b/mid-b/original'. (storage/unauthorized)
+RESULT T05 = BLOQUEADO :: upload de B legitimo; caminho alheio, repeticao, privacidade, avatar, delete e anonimo negados a A

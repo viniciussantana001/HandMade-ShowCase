@@ -1,0 +1,15 @@
+{
+  "cenario": "APP-S05",
+  "categoria": "Spoofing",
+  "tipo": "analise-estatica",
+  "alvo": "functions/src/payments/payment-webhook.ts",
+  "propriedadeSeguranca": "Assinatura de webhook Stripe validada criptograficamente antes de qualquer operacao de escrita",
+  "veredictoAntes": "BLOQUEADO",
+  "veredictoDepois": "BLOQUEADO",
+  "statusFinal": "BLOQUEADO",
+  "handler": "stripeWebhook (functions/src/payments/payment-webhook.ts:657)",
+  "linhaVerificacaoAssinatura": "682-686 (stripe.webhooks.constructEvent)",
+  "linhaPrimeiraEscrita": "714 / 716 / 723 (apos constructEvent e filtro de eventos)",
+  "mercadoPagoStatus": "fora-de-escopo (sem webhook publico exposto, apenas alias de reconciliacao interna)",
+  "observacoes": "Nenhuma escrita em banco de dados ou processamento de negocio ocorre antes da confirmacao da assinatura HMAC pelo SDK oficial Stripe."
+}

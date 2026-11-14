@@ -1,0 +1,10 @@
+{
+  "cenario": "APP-T05",
+  "categoria": "Tampering",
+  "alvo": "listing-media/{uid}/{listingId}/{mediaId}",
+  "propriedadeSeguranca": "Upload no prefixo/objeto de Storage de outro usuario e negado (upload proprio aceito); tambem privacy-exports/{uid}",
+  "veredictoAntes": "BLOQUEADO",
+  "veredictoDepois": "BLOQUEADO",
+  "statusFinal": "BLOQUEADO",
+  "observacoes": "Upload no caminho proprio aceito. Upload no caminho de outro usuario, repeticao, privacy-exports, avatar, delecao e acesso anonimo negados com storage/unauthorized."
+}

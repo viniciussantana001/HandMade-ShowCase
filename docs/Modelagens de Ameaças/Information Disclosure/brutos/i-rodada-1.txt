@@ -1,0 +1,119 @@
+alvo projectId=demo-handmade firestore=127.0.0.1:18080 storage=127.0.0.1:19199 rodada=1
+regras firestore=repositorio/firebase/firestore.rules sha256=d5b016c62e521b248d7a694c89c5a0f62c9b20e672a7b24422ed6b47953a25b6
+regras storage=repositorio/firebase/storage.rules sha256=927e40dba79b93c53e82a6204fb627eb6ff4deaef3063eff7c8065b3f3f731c8
+CENARIO|APP-I01|inicio
+PROBE|APP-I01|I01.1|esperado=PERMITIDO|observado=PERMITIDO|OK|titular le o proprio cadastro (controle)
+PROBE|APP-I01|I01.2|esperado=NEGADO|observado=NEGADO|OK|estranho le o cadastro do titular
+PROBE|APP-I01|I01.3|esperado=NEGADO|observado=NEGADO|OK|visitante sem login le o cadastro do titular
+PROBE|APP-I01|I01.4|esperado=NEGADO|observado=NEGADO|OK|estranho enumera a colecao users (limite 10)
+PROBE|APP-I01|I01.5|esperado=NEGADO|observado=NEGADO|OK|titular enumera a colecao users inteira
+PROBE|APP-I01|I01.6|esperado=NEGADO|observado=NEGADO|OK|estranho le os consentimentos do titular
+PROBE|APP-I01|I01.7|esperado=PERMITIDO|observado=PERMITIDO|OK|titular le os proprios consentimentos (controle)
+CENARIO|APP-I02|inicio
+PROBE|APP-I02|I02.1|esperado=PERMITIDO|observado=PERMITIDO|OK|titular le um bloqueio proprio (controle)
+PROBE|APP-I02|I02.2|esperado=NEGADO|observado=NEGADO|OK|estranho le o bloqueio do titular
+PROBE|APP-I02|I02.3|esperado=PERMITIDO|observado=PERMITIDO|OK|titular lista os proprios bloqueios com limite (controle)
+PROBE|APP-I02|I02.4|esperado=NEGADO|observado=NEGADO|OK|estranho lista os bloqueios do titular
+PROBE|APP-I02|I02.5|esperado=NEGADO|observado=NEGADO|OK|titular lista os bloqueios sem limite
+PROBE|APP-I02|I02.6|esperado=PERMITIDO|observado=PERMITIDO|OK|titular le a propria notificacao (controle)
+PROBE|APP-I02|I02.7|esperado=NEGADO|observado=NEGADO|OK|estranho lista as notificacoes do titular
+PROBE|APP-I02|I02.8|esperado=NEGADO|observado=NEGADO|OK|visitante sem login le as notificacoes do titular
+CENARIO|APP-I03|inicio
+PROBE|APP-I03|I03.1|esperado=PERMITIDO|observado=PERMITIDO|OK|visitante le anuncio ativo (publico por desenho, controle)
+PROBE|APP-I03|I03.2|esperado=NEGADO|observado=NEGADO|OK|visitante le anuncio em rascunho
+PROBE|APP-I03|I03.3|esperado=NEGADO|observado=NEGADO|OK|visitante le anuncio removido
+PROBE|APP-I03|I03.4|esperado=NEGADO|observado=NEGADO|OK|estranho le anuncio em rascunho do titular
+PROBE|APP-I03|I03.5|esperado=PERMITIDO|observado=PERMITIDO|OK|titular le o proprio rascunho (controle)
+PROBE|APP-I03|I03.6|esperado=PERMITIDO|observado=PERMITIDO|OK|visitante lista anuncios ativos com filtro e limite (controle)
+PROBE|APP-I03|I03.7|esperado=NEGADO|observado=NEGADO|OK|visitante lista anuncios sem filtro (incluiria rascunhos)
+PROBE|APP-I03|I03.8|esperado=NEGADO|observado=NEGADO|OK|titular le a localizacao exata/aproximada no documento server-only
+PROBE|APP-I03|I03.9|esperado=NEGADO|observado=NEGADO|OK|estranho le a localizacao de anuncio ativo
+CENARIO|APP-I04|inicio
+PROBE|APP-I04|I04.1|esperado=PERMITIDO|observado=PERMITIDO|OK|vendedor le o estado de upload da propria midia (controle)
+PROBE|APP-I04|I04.2|esperado=NEGADO|observado=NEGADO|OK|estranho le o estado de upload e o motivo de rejeicao da midia
+PROBE|APP-I04|I04.3|esperado=NEGADO|observado=NEGADO|OK|visitante le o estado de upload da midia
+PROBE|APP-I04|I04.4|esperado=PERMITIDO|observado=PERMITIDO|OK|visitante le metricas de anuncio ativo (publico por desenho, controle)
+PROBE|APP-I04|I04.5|esperado=NEGADO|observado=NEGADO|OK|visitante le metricas de anuncio em rascunho
+CENARIO|APP-I05|inicio
+PROBE|APP-I05|I05.1|esperado=PERMITIDO|observado=PERMITIDO|OK|visitante le perfil publico de vendedor ativo e completo (controle)
+PROBE|APP-I05|I05.2|esperado=NEGADO|observado=NEGADO|OK|visitante le perfil de vendedor com visibilidade privada
+PROBE|APP-I05|I05.3|esperado=NEGADO|observado=NEGADO|OK|visitante le perfil de vendedor suspenso
+PROBE|APP-I05|I05.4|esperado=NEGADO|observado=NEGADO|OK|visitante le perfil de vendedor com cadastro incompleto
+PROBE|APP-I05|I05.5|esperado=NEGADO|observado=NEGADO|OK|visitante enumera a colecao sellerProfiles
+PROBE|APP-I05|I05.6|esperado=NEGADO|observado=NEGADO|OK|titular altera o proprio perfil publico diretamente
+CENARIO|APP-I06|inicio
+PROBE|APP-I06|I06.1|esperado=PERMITIDO|observado=PERMITIDO|OK|visitante le agregado de avaliacao consistente (controle)
+PROBE|APP-I06|I06.2|esperado=NEGADO|observado=NEGADO|OK|visitante le agregado inconsistente (soma acima de 5 por avaliacao)
+PROBE|APP-I06|I06.3|esperado=PERMITIDO|observado=PERMITIDO|OK|visitante le agregado inexistente sem erro de permissao (controle)
+PROBE|APP-I06|I06.4|esperado=NEGADO|observado=NEGADO|OK|visitante enumera a colecao reviewAggregates
+CENARIO|APP-I07|inicio
+PROBE|APP-I07|I07.1|esperado=NEGADO|observado=NEGADO|OK|titular le o registro de pagamento canonico
+PROBE|APP-I07|I07.2|esperado=NEGADO|observado=NEGADO|OK|moderador le o registro de pagamento canonico
+PROBE|APP-I07|I07.3|esperado=NEGADO|observado=NEGADO|OK|titular le tentativas de pagamento
+PROBE|APP-I07|I07.4|esperado=NEGADO|observado=NEGADO|OK|titular le tentativas de estorno
+PROBE|APP-I07|I07.5|esperado=NEGADO|observado=NEGADO|OK|titular le eventos brutos do provedor de pagamento
+PROBE|APP-I07|I07.6|esperado=NEGADO|observado=NEGADO|OK|titular le a conexao com o provedor (dados da conta do vendedor)
+PROBE|APP-I07|I07.7|esperado=NEGADO|observado=NEGADO|OK|visitante le estados OAuth
+PROBE|APP-I07|I07.8|esperado=NEGADO|observado=NEGADO|OK|titular le vinculos de conta do provedor
+PROBE|APP-I07|I07.9|esperado=NEGADO|observado=NEGADO|OK|moderador le a configuracao da plataforma
+PROBE|APP-I07|I07.10|esperado=NEGADO|observado=NEGADO|OK|titular le os proprios registros de dispositivo (token de push)
+PROBE|APP-I07|I07.11|esperado=NEGADO|observado=NEGADO|OK|titular le jobs internos de entrega de notificacao
+PROBE|APP-I07|I07.12|esperado=NEGADO|observado=NEGADO|OK|participante le operacoes internas de idempotencia do chat
+PROBE|APP-I07|I07.13|esperado=NEGADO|observado=NEGADO|OK|titular le o limitador de taxa do proprio chat
+PROBE|APP-I07|I07.14|esperado=NEGADO|observado=NEGADO|OK|titular le operacoes internas de pedido
+CENARIO|APP-I08|inicio
+PROBE|APP-I08|I08.1|esperado=NEGADO|observado=NEGADO|OK|visitante enumera pedidos
+PROBE|APP-I08|I08.2|esperado=NEGADO|observado=NEGADO|OK|visitante enumera conversas
+PROBE|APP-I08|I08.3|esperado=NEGADO|observado=NEGADO|OK|visitante enumera propostas
+PROBE|APP-I08|I08.4|esperado=NEGADO|observado=NEGADO|OK|visitante enumera recibos de pagamento
+PROBE|APP-I08|I08.5|esperado=NEGADO|observado=NEGADO|OK|estranho enumera propostas sem filtro de participacao
+PROBE|APP-I08|I08.6|esperado=NEGADO|observado=NEGADO|OK|estranho enumera pedidos sem filtro de participacao
+PROBE|APP-I08|I08.7|esperado=NEGADO|observado=NEGADO|OK|estranho enumera avaliacoes sem filtro de participacao
+PROBE|APP-I08|I08.8|esperado=PERMITIDO|observado=PERMITIDO|OK|moderador lista denuncias com limite (controle de escopo)
+PROBE|APP-I08|I08.9|esperado=NEGADO|observado=NEGADO|OK|estranho lista denuncias sem filtro
+CENARIO|APP-I09|inicio
+PROBE|APP-I09|I09.1|esperado=PERMITIDO|observado=PERMITIDO|OK|titular le a propria solicitacao de exportacao (controle)
+PROBE|APP-I09|I09.2|esperado=NEGADO|observado=NEGADO|OK|estranho le a exportacao do titular pelo identificador
+PROBE|APP-I09|I09.3|esperado=NEGADO|observado=NEGADO|OK|visitante le a exportacao do titular
+PROBE|APP-I09|I09.4|esperado=NEGADO|observado=NEGADO|OK|titular enumera as solicitacoes de exportacao
+PROBE|APP-I09|I09.5|esperado=NEGADO|observado=NEGADO|OK|titular altera o status da propria exportacao
+CENARIO|APP-ST01|inicio
+PROBE|APP-ST01|ST01.1|esperado=PERMITIDO|observado=PERMITIDO|OK|vendedor le o original da propria foto com midia pronta (controle)
+PROBE|APP-ST01|ST01.2|esperado=NEGADO|observado=NEGADO|OK|estranho le o original (foto com metadados) de outro vendedor
+PROBE|APP-ST01|ST01.3|esperado=NEGADO|observado=NEGADO|OK|visitante le o original da foto
+PROBE|APP-ST01|ST01.4|esperado=NEGADO|observado=NEGADO|OK|vendedor le o original apos a midia ser removida
+CENARIO|APP-ST02|inicio
+PROBE|APP-ST02|ST02.1|esperado=PERMITIDO|observado=PERMITIDO|OK|visitante le a variante publica de anuncio ativo com midia pronta (controle)
+PROBE|APP-ST02|ST02.2|esperado=PERMITIDO|observado=PERMITIDO|OK|visitante le a miniatura de anuncio ativo com midia pronta (controle)
+PROBE|APP-ST02|ST02.3|esperado=NEGADO|observado=NEGADO|OK|visitante le a variante de anuncio em rascunho
+PROBE|APP-ST02|ST02.4|esperado=NEGADO|observado=NEGADO|OK|estranho le a variante de anuncio em rascunho do titular
+PROBE|APP-ST02|ST02.5|esperado=PERMITIDO|observado=PERMITIDO|OK|titular le a propria variante de anuncio em rascunho (controle)
+PROBE|APP-ST02|ST02.6|esperado=NEGADO|observado=NEGADO|OK|visitante le variante de midia ainda nao processada
+CENARIO|APP-ST03|inicio
+PROBE|APP-ST03|ST03.1|esperado=PERMITIDO|observado=PERMITIDO|OK|titular le o proprio arquivo de exportacao pronto e valido (controle)
+PROBE|APP-ST03|ST03.2|esperado=NEGADO|observado=NEGADO|OK|estranho le o arquivo de exportacao do titular
+PROBE|APP-ST03|ST03.3|esperado=NEGADO|observado=NEGADO|OK|visitante le o arquivo de exportacao do titular
+PROBE|APP-ST03|ST03.4|esperado=NEGADO|observado=NEGADO|OK|titular le exportacao expirada
+PROBE|APP-ST03|ST03.5|esperado=NEGADO|observado=NEGADO|OK|titular le exportacao ainda nao pronta
+PROBE|APP-ST03|ST03.6|esperado=NEGADO|observado=NEGADO|OK|titular le outro arquivo da mesma exportacao (fora do nome permitido)
+CENARIO|APP-ST04|inicio
+PROBE|APP-ST04|ST04.1|esperado=PERMITIDO|observado=PERMITIDO|OK|conta autenticada le o avatar publico minimo (exposicao intencional, registrada)
+PROBE|APP-ST04|ST04.2|esperado=NEGADO|observado=NEGADO|OK|visitante sem login le o avatar
+PROBE|APP-ST04|ST04.3|esperado=NEGADO|observado=NEGADO|OK|estranho sobrescreve o avatar de outra conta
+PROBE|APP-ST04|ST04.4|esperado=PERMITIDO|observado=PERMITIDO|OK|titular troca o proprio avatar com metadado do dono (controle)
+OBS|APP-ST04|ST04.obs|avatar-legivel-por-conta-autenticada=exposicao-intencional
+VEREDITO|APP-I01|BLOQUEADO
+VEREDITO|APP-I02|BLOQUEADO
+VEREDITO|APP-I03|BLOQUEADO
+VEREDITO|APP-I04|BLOQUEADO
+VEREDITO|APP-I05|BLOQUEADO
+VEREDITO|APP-I06|BLOQUEADO
+VEREDITO|APP-I07|BLOQUEADO
+VEREDITO|APP-I08|BLOQUEADO
+VEREDITO|APP-I09|BLOQUEADO
+VEREDITO|APP-ST01|BLOQUEADO
+VEREDITO|APP-ST02|BLOQUEADO
+VEREDITO|APP-ST03|BLOQUEADO
+VEREDITO|APP-ST04|BLOQUEADO
+TOTAL_PROBES=87 DIVERGENTES=0
+HASH_VEREDICTOS=d5b80207a991c16ab5e0b319fda1168aab241a7e405a4fca684eba5928220025

@@ -41,3 +41,25 @@ cc1c3226092e881713c5ca0d1a58a51c8b57b9d275cb5f693d09042f8058f0d1  entrega-stride
 94c665595d8c22281d7b5b9e8106fbcf32bb3ae1f63b12c696ea2d406643bb28  entrega-stride/Modelagens de Ameaças/T - Tampering/cenarios/APP-T07/resultado.json
 6289849ae21948a30a496ed09d6589b000de6bc4c4b5e49930a86934fbe3313d  entrega-stride/Modelagens de Ameaças/T - Tampering/cenarios/APP-T07/teste/cenarios5.mjs
 d3efd2135ab4ce780ab2a35999218d493b3bd459dfc3a5c47026f47dc7a82607  entrega-stride/Modelagens de Ameaças/verificacao-sanitizacao.txt
+71432491060d53b72d95f68a1e00a94e035f648f9835d83efbc3cd982cba3ebb  entrega-stride/Modelagens de Ameaças/R - Repudiation/PLANO-EXECUCAO-R.md
+4c6e9dbc02b0cfd8a6bc3a59f91eca7dca1e86f399011848b60dd5ef081cd637  entrega-stride/Modelagens de Ameaças/R - Repudiation/teste/cenarios-r.mjs
+fcfbca895cb75d134eb8814adf767c320a9e7a1526455fa63b75352639cba05d  entrega-stride/Modelagens de Ameaças/R - Repudiation/cenarios/rodada-1/resultado.json
+0e86011b11033463f9d7355dff310a589d6cc21815e26301d71f08ce42345b20  entrega-stride/Modelagens de Ameaças/R - Repudiation/cenarios/rodada-1/execucao.txt
+59d3b6526b4e621cf42ef69e8814b9007533b3bfd1842cf7eafc10e71d6a6b23  entrega-stride/Modelagens de Ameaças/R - Repudiation/cenarios/rodada-2/resultado.json
+58e24dc240580a90e20e80277dd09e2ce0b69581554f3295ac52630ce26873e6  entrega-stride/Modelagens de Ameaças/R - Repudiation/cenarios/rodada-2/execucao.txt
+d67a770589bdbff0f197608c271ee3814fd5bb3b0aa2276643c9e7380272b9be  entrega-stride/Modelagens de Ameaças/R - Repudiation/fase2-callables/testes/pedido.callables.test.mjs
+d55ca66b174a0091da37287259e12c421d83ab030476d807e6f1cf714d82fa1b  entrega-stride/Modelagens de Ameaças/R - Repudiation/fase2-callables/testes/proposta.callables.test.mjs
+95e6a3961cebf57f7a33da9ec1adb27d0b42adee7dbaa22697031e2f6a504203  entrega-stride/Modelagens de Ameaças/R - Repudiation/fase2-callables/testes/disputa-moderacao.callables.test.mjs
+4f39c60383be46fd44dcca40772b41cb1a3b0e6738e360e428ff3ededfc9d7e4  entrega-stride/Modelagens de Ameaças/R - Repudiation/fase2-callables/resultados/resultado-sequencial.json
+826a950e5dfea00c9600ff03ba1d8c281f1b9623f96d07a696ea9a05c60a60eb  entrega-stride/Modelagens de Ameaças/R - Repudiation/fase2-callables/resultados/execucao-paralela-invalida.json
+226a432d17d1c41b2c5f7b59c614b0af5d676cdf39d098c87cbd8e80ce9d9213  entrega-stride/Modelagens de Ameaças/R - Repudiation/fase2-callables/testes/mensagem.callables.test.mjs
+dd7d58ec99f85f1fd2c0743bc61ad670974ea181864bfd304bfa672812493b35  entrega-stride/Modelagens de Ameaças/R - Repudiation/fase2-callables/resultados/resultado-final.json
+7eb3e1c6016184007f48241ef60b4bafa7cc40c698a77f8c1f54ba8c427da78c  entrega-stride/Modelagens de Ameaças/I - Information Disclosure/teste-regras/cenarios-i.mjs
+9a07720e5a03f1fc753cf997797952defe857840069eb26042baa46c37a90e09  entrega-stride/Modelagens de Ameaças/I - Information Disclosure/teste-aplicacao/informacao.callables.test.mjs
+cca311f65c2c42e2b12876f838234dfd64f7a5aa7e96e7b0d3b6fe80214885f2  entrega-stride/Modelagens de Ameaças/I - Information Disclosure/resultados/resultado-i-rodada-1.json
+08fcb60d10088a18540ef54d24e8b80ea06ca0381de1d6bc463f93e0c09d8493  entrega-stride/Modelagens de Ameaças/I - Information Disclosure/resultados/resultado-i-rodada-2.json
+257c8bc21a59f386893b09fbff3a1af4774bcd5b044eefd9b78ae9d245a9d2eb  entrega-stride/Modelagens de Ameaças/I - Information Disclosure/resultados/callables-informacao.json
+6a565c5b1ba0924e17015b304f50d83e8d3bbb36397f05920f9f15c4ccb2a94b  entrega-stride/Modelagens de Ameaças/I - Information Disclosure/resultados/callables-informacao-2.json
+82ec6c064eb95de9648f00dfbceccae04f715ad59f7c4b00f7269ad5eb8ae348  entrega-stride/Modelagens de Ameaças/I - Information Disclosure/brutos/i-rodada-1.txt
+fd3f981583a477093f291374a29f15df6912fc4152adbb967ed65d895119b4f4  entrega-stride/Modelagens de Ameaças/I - Information Disclosure/brutos/i-rodada-2.txt
+e854dea67d856777ae3d20ff7c00c0c3c5b94814babae2a3e9da258825d33260  entrega-stride/Modelagens de Ameaças/I - Information Disclosure/estatica/varredura-estatica-i.md

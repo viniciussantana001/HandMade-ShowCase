@@ -1,0 +1,10 @@
+{
+  "cenario": "APP-T07",
+  "categoria": "Tampering",
+  "alvo": "users/{uid}",
+  "propriedadeSeguranca": "Criacao legitima sem sellerActivatedAt e permitida; criacao com o campo fabricado pelo cliente e negada; reescrita e negada por imutabilidade",
+  "veredictoAntes": "BURLADO",
+  "veredictoDepois": "BLOQUEADO",
+  "statusFinal": "BLOQUEADO",
+  "observacoes": "Na regra original (commit 64cfb85), o campo sellerActivatedAt constava na allowlist de create sem validacao de valor, permitindo forja (BURLADO). Apos a correcao minimalista (remocao de sellerActivatedAt da allowlist de create), o vetor passou para BLOQUEADO, mantendo os demais controles e cenarios inalterados."
+}

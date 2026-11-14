@@ -1,0 +1,117 @@
+alvo projectId=demo-handmade host=127.0.0.1 porta=18080 rodada=1
+regras arquivo=repositorio/firebase/firestore.rules sha256=d5b016c62e521b248d7a694c89c5a0f62c9b20e672a7b24422ed6b47953a25b6
+CENARIO|APP-R01|inicio
+PROBE|APP-R01|R01.1|esperado=PERMITIDO|observado=PERMITIDO|OK|comprador participante le evento
+PROBE|APP-R01|R01.2|esperado=PERMITIDO|observado=PERMITIDO|OK|vendedor participante le evento
+PROBE|APP-R01|R01.3|esperado=NEGADO|observado=NEGADO|OK|terceiro le evento
+PROBE|APP-R01|R01.4|esperado=NEGADO|observado=NEGADO|OK|anonimo le evento
+PROBE|APP-R01|R01.5|esperado=NEGADO|observado=NEGADO|OK|comprador altera actorUid de evento existente
+PROBE|APP-R01|R01.6|esperado=NEGADO|observado=NEGADO|OK|vendedor apaga evento
+PROBE|APP-R01|R01.7|esperado=NEGADO|observado=NEGADO|OK|comprador cria evento forjado com actorUid do vendedor
+PROBE|APP-R01|R01.8|esperado=NEGADO|observado=NEGADO|OK|vendedor altera status do pedido diretamente
+PROBE|APP-R01|R01.9|esperado=PERMITIDO|observado=PERMITIDO|OK|comprador lista eventos com limite (controle)
+PROBE|APP-R01|R01.10|esperado=NEGADO|observado=NEGADO|OK|terceiro lista eventos com limite
+CENARIO|APP-R02|inicio
+PROBE|APP-R02|R02.1|esperado=PERMITIDO|observado=PERMITIDO|OK|comprador participante le mensagem
+PROBE|APP-R02|R02.2|esperado=PERMITIDO|observado=PERMITIDO|OK|vendedor participante le mensagem
+PROBE|APP-R02|R02.3|esperado=NEGADO|observado=NEGADO|OK|terceiro le mensagem
+PROBE|APP-R02|R02.4|esperado=NEGADO|observado=NEGADO|OK|vendedor cria mensagem com senderId do comprador
+PROBE|APP-R02|R02.5|esperado=NEGADO|observado=NEGADO|OK|comprador grava mensagem direta (sem caminho do servidor)
+PROBE|APP-R02|R02.6|esperado=NEGADO|observado=NEGADO|OK|comprador altera conteudo da propria mensagem
+PROBE|APP-R02|R02.7|esperado=NEGADO|observado=NEGADO|OK|vendedor apaga mensagem do comprador
+PROBE|APP-R02|R02.8|esperado=NEGADO|observado=NEGADO|OK|comprador altera status da conversa
+PROBE|APP-R02|R02.9|esperado=PERMITIDO|observado=PERMITIDO|OK|comprador lista mensagens com limite (controle)
+PROBE|APP-R02|R02.10|esperado=NEGADO|observado=NEGADO|OK|terceiro lista mensagens com limite
+CENARIO|APP-R03|inicio
+PROBE|APP-R03|R03.1|esperado=PERMITIDO|observado=PERMITIDO|OK|comprador participante le proposta
+PROBE|APP-R03|R03.2|esperado=PERMITIDO|observado=PERMITIDO|OK|vendedor participante le proposta
+PROBE|APP-R03|R03.3|esperado=NEGADO|observado=NEGADO|OK|terceiro le proposta
+PROBE|APP-R03|R03.4|esperado=NEGADO|observado=NEGADO|OK|vendedor marca proposta como aceita diretamente
+PROBE|APP-R03|R03.5|esperado=NEGADO|observado=NEGADO|OK|comprador reduz amountCents da propria proposta
+PROBE|APP-R03|R03.6|esperado=NEGADO|observado=NEGADO|OK|comprador apaga proposta
+PROBE|APP-R03|R03.7|esperado=NEGADO|observado=NEGADO|OK|comprador cria proposta nova diretamente
+PROBE|APP-R03|R03.8|esperado=PERMITIDO|observado=PERMITIDO|OK|comprador lista propostas filtrando participacao (controle)
+PROBE|APP-R03|R03.9|esperado=NEGADO|observado=NEGADO|OK|terceiro lista propostas sem filtro
+CENARIO|APP-R04|inicio
+PROBE|APP-R04|R04.1|esperado=PERMITIDO|observado=PERMITIDO|OK|comprador participante le recibo
+PROBE|APP-R04|R04.2|esperado=NEGADO|observado=NEGADO|OK|terceiro le recibo
+PROBE|APP-R04|R04.3|esperado=NEGADO|observado=NEGADO|OK|comprador le pagamento canonico
+PROBE|APP-R04|R04.4|esperado=NEGADO|observado=NEGADO|OK|vendedor le evento do provedor
+PROBE|APP-R04|R04.5|esperado=NEGADO|observado=NEGADO|OK|comprador altera status do recibo para refunded
+PROBE|APP-R04|R04.6|esperado=NEGADO|observado=NEGADO|OK|vendedor grava evento de provedor forjado
+PROBE|APP-R04|R04.7|esperado=NEGADO|observado=NEGADO|OK|vendedor altera estado do pagamento canonico
+PROBE|APP-R04|R04.8|esperado=PERMITIDO|observado=PERMITIDO|OK|comprador lista recibos filtrando participacao (controle)
+CENARIO|APP-R05|inicio
+PROBE|APP-R05|R05.1|esperado=NEGADO|observado=NEGADO|OK|comprador le trilha de auditoria
+PROBE|APP-R05|R05.2|esperado=NEGADO|observado=NEGADO|OK|moderador le trilha de auditoria
+PROBE|APP-R05|R05.3|esperado=NEGADO|observado=NEGADO|OK|moderador grava auditoria forjada
+PROBE|APP-R05|R05.4|esperado=NEGADO|observado=NEGADO|OK|moderador altera trilha de auditoria existente
+PROBE|APP-R05|R05.5|esperado=NEGADO|observado=NEGADO|OK|moderador apaga trilha de auditoria
+PROBE|APP-R05|R05.6|esperado=NEGADO|observado=NEGADO|OK|anonimo le trilha de auditoria
+PROBE|APP-R05|R05.7|esperado=NEGADO|observado=NEGADO|OK|moderador le nota interna de moderacao
+PROBE|APP-R05|R05.8|esperado=NEGADO|observado=NEGADO|OK|moderador altera caso de moderacao diretamente
+PROBE|APP-R05|R05.9|esperado=PERMITIDO|observado=PERMITIDO|OK|moderador le denuncia (controle do claim)
+CENARIO|APP-R06|inicio
+PROBE|APP-R06|R06.1|esperado=PERMITIDO|observado=PERMITIDO|OK|denunciante le a propria denuncia
+PROBE|APP-R06|R06.2|esperado=NEGADO|observado=NEGADO|OK|terceiro le denuncia
+PROBE|APP-R06|R06.3|esperado=PERMITIDO|observado=PERMITIDO|OK|moderador le denuncia
+PROBE|APP-R06|R06.4|esperado=PERMITIDO|observado=PERMITIDO|OK|moderador lista denuncias com limite
+PROBE|APP-R06|R06.5|esperado=NEGADO|observado=NEGADO|OK|denunciante lista denuncias sem filtro
+PROBE|APP-R06|R06.6|esperado=PERMITIDO|observado=PERMITIDO|OK|denunciante lista as proprias denuncias (filtro)
+PROBE|APP-R06|R06.7|esperado=NEGADO|observado=NEGADO|OK|denunciante altera status da denuncia
+PROBE|APP-R06|R06.8|esperado=NEGADO|observado=NEGADO|OK|moderador altera status da denuncia diretamente
+PROBE|APP-R06|R06.9|esperado=PERMITIDO|observado=PERMITIDO|OK|vendedor participante le disputa
+PROBE|APP-R06|R06.10|esperado=NEGADO|observado=NEGADO|OK|terceiro le disputa
+PROBE|APP-R06|R06.11|esperado=PERMITIDO|observado=PERMITIDO|OK|moderador le disputa
+PROBE|APP-R06|R06.12|esperado=NEGADO|observado=NEGADO|OK|comprador marca disputa como resolvida
+PROBE|APP-R06|R06.13|esperado=NEGADO|observado=NEGADO|OK|moderador marca disputa como resolvida diretamente
+CENARIO|APP-R07|inicio
+PROBE|APP-R07|R07.1|esperado=PERMITIDO|observado=PERMITIDO|OK|cadastro atomico do proprio titular (perfil + termos + privacidade)
+PROBE|APP-R07|R07.2|esperado=PERMITIDO|observado=PERMITIDO|OK|titular le o proprio consentimento de termos (controle)
+PROBE|APP-R07|R07.3|esperado=NEGADO|observado=NEGADO|OK|terceiro le consentimento de termos alheio
+PROBE|APP-R07|R07.4|esperado=NEGADO|observado=NEGADO|OK|titular altera consentimento gravado (write-once)
+PROBE|APP-R07|R07.5|esperado=NEGADO|observado=NEGADO|OK|titular apaga consentimento de privacidade
+PROBE|APP-R07|R07.6|esperado=NEGADO|observado=NEGADO|OK|cadastro com createdAt forjado (diferente de request.time)
+PROBE|APP-R07|R07.7|esperado=NEGADO|observado=NEGADO|OK|cadastro com termos nao concedidos (granted=false)
+PROBE|APP-R07|R07.8|esperado=NEGADO|observado=NEGADO|OK|cadastro sem consentimento de privacidade (vinculo do lote)
+PROBE|APP-R07|R07.9|esperado=NEGADO|observado=NEGADO|OK|termos com requestId diferente do cadastro
+PROBE|APP-R07|R07.10|esperado=NEGADO|observado=NEGADO|OK|termos com documentVersion diferente da versao fixada (2.0)
+PROBE|APP-R07|R07.11|esperado=NEGADO|observado=NEGADO|OK|titular grava consentimento no caminho de outro uid
+CENARIO|APP-R08|inicio
+PROBE|APP-R08|R08.1|esperado=PERMITIDO|observado=PERMITIDO|OK|vendedor le o proprio perfil
+PROBE|APP-R08|R08.2|esperado=NEGADO|observado=NEGADO|OK|terceiro le perfil do vendedor
+PROBE|APP-R08|R08.3|esperado=NEGADO|observado=NEGADO|OK|vendedor apaga o proprio perfil
+PROBE|APP-R08|R08.4|esperado=NEGADO|observado=NEGADO|OK|vendedor define status deleted
+PROBE|APP-R08|R08.5|esperado=NEGADO|observado=NEGADO|OK|vendedor eleva role para admin
+PROBE|APP-R08|R08.6|esperado=PERMITIDO|observado=PERMITIDO|OK|vendedor altera nome com incremento de revisao (controle)
+OBS|APP-R08|R08.obs|valor-anterior-preservado=false
+PROBE|APP-R08|R08.7|esperado=NEGADO|observado=NEGADO|OK|vendedor repete revisao sem incrementar
+CENARIO|APP-R09|inicio
+PROBE|APP-R09|R09.1|esperado=PERMITIDO|observado=PERMITIDO|OK|titular le a propria solicitacao de exclusao
+PROBE|APP-R09|R09.2|esperado=NEGADO|observado=NEGADO|OK|terceiro le solicitacao de exclusao alheia
+PROBE|APP-R09|R09.3|esperado=NEGADO|observado=NEGADO|OK|titular lista solicitacoes de exclusao
+PROBE|APP-R09|R09.4|esperado=NEGADO|observado=NEGADO|OK|titular altera status da solicitacao para pending
+PROBE|APP-R09|R09.5|esperado=NEGADO|observado=NEGADO|OK|titular le o segredo do tombstone
+PROBE|APP-R09|R09.6|esperado=NEGADO|observado=NEGADO|OK|titular grava segredo de tombstone forjado
+PROBE|APP-R09|R09.7|esperado=PERMITIDO|observado=PERMITIDO|OK|titular le a propria exportacao (controle)
+PROBE|APP-R09|R09.8|esperado=NEGADO|observado=NEGADO|OK|titular altera status da exportacao
+CENARIO|APP-R10|inicio
+PROBE|APP-R10|R10.1|esperado=PERMITIDO|observado=PERMITIDO|OK|autor le a propria avaliacao
+PROBE|APP-R10|R10.2|esperado=PERMITIDO|observado=PERMITIDO|OK|avaliado le a avaliacao recebida
+PROBE|APP-R10|R10.3|esperado=NEGADO|observado=NEGADO|OK|terceiro le a avaliacao
+PROBE|APP-R10|R10.4|esperado=NEGADO|observado=NEGADO|OK|autor altera a nota
+PROBE|APP-R10|R10.5|esperado=NEGADO|observado=NEGADO|OK|avaliado apaga a avaliacao
+PROBE|APP-R10|R10.6|esperado=NEGADO|observado=NEGADO|OK|autor cria segunda avaliacao do mesmo pedido
+PROBE|APP-R10|R10.7|esperado=PERMITIDO|observado=PERMITIDO|OK|autor lista avaliacoes filtrando participacao (controle)
+VEREDITO|APP-R01|BLOQUEADO
+VEREDITO|APP-R02|BLOQUEADO
+VEREDITO|APP-R03|BLOQUEADO
+VEREDITO|APP-R04|BLOQUEADO
+VEREDITO|APP-R05|BLOQUEADO
+VEREDITO|APP-R06|BLOQUEADO
+VEREDITO|APP-R07|BLOQUEADO
+VEREDITO|APP-R08|BLOQUEADO
+VEREDITO|APP-R09|BLOQUEADO
+VEREDITO|APP-R10|BLOQUEADO
+TOTAL_PROBES=92 DIVERGENTES=0
+HASH_VEREDICTOS=54b0779e95f72ff6a5a80725b154ff6237f222359d494cd57a637b758dad3aab

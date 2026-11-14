@@ -1,0 +1,10 @@
+{
+  "cenario": "APP-S01",
+  "categoria": "Spoofing",
+  "alvo": "users/{uid}",
+  "propriedadeSeguranca": "Acesso cross-user autenticado e bloqueado; isolamento de identidade garantido",
+  "veredictoAntes": "BLOQUEADO",
+  "veredictoDepois": "BLOQUEADO",
+  "statusFinal": "BLOQUEADO",
+  "observacoes": "Leitura e escrita de outro perfil negadas para cliente autenticado com UID diferente e para cliente anonimo. Leitura do proprio perfil permitida."
+}
